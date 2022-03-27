@@ -4,11 +4,15 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    html: {
-      direction: 'rtl'
-    },
+
     extend: {
-      wrapper: {
+      colors: {
+        darkGold: "#BF9957",
+        brightGold: "#E7BF74",
+        backgroundHeader: "rgba(0,0,0,0.5)"
+      },
+      backgroundImage: {
+        'header-img': "url('../styles/img/header.jpg')",
 
       }
     },
