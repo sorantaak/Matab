@@ -1,26 +1,43 @@
 import Link from "next/link";
+import { useState } from "react";
+import * as FaIcons from "react-icons/fa";
+import { NavbarData } from "../../data/NavbarData";
 function MainNavBar() {
+  const [showMenu, setShowMenu] = useState(false);
+  const closeMenu = () => {
+    setShowMenu(false);
+  };
+
   return (
     <div className="flex flex-row justify-between py-4">
-      <div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 text-darkGold hover:text-brightGold cursor-pointer"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M4 6h16M4 12h16m-7 6h7"
-          />
-        </svg>
+      <div className="flex sm:hidden">
+        <FaIcons.FaBars
+          onClick={() => setShowMenu(true)}
+          className="text-darkGold text-2xl hover:text-brightGold cursor-pointer"
+        />
       </div>
-      {/* <div>
-        <ul className="flex flex-row text-darkGold text-sm">
-          <li className="pl-5 cursor-pointer hover:text-brightGold">
+      {showMenu && (
+        <div className="w-full h-full fixed bg-gray-800/50 z-10 top-0 ">
+          <div className="w-1/2 bg-white fixed top-0 bottom-0 right-0 z-20 opacity-100 transition transition-700">
+            <div>
+              <button onClick={closeMenu}>close</button>
+            </div>
+          </div>
+        </div>
+      )}
+      <div>
+        <ul className="hidden sm:flex flex-row text-darkGold text-sm lg:text-lg">
+          {NavbarData.map((item) => (
+            <li
+              key={item.id}
+              className="pl-12 cursor-pointer hover:text-brightGold"
+            >
+              <Link href="#">
+                <a>{item.title}</a>
+              </Link>
+            </li>
+          ))}
+          {/* <li className="pl-5 cursor-pointer hover:text-brightGold">
             <Link href="#">
               <a>خانه</a>
             </Link>
@@ -39,17 +56,17 @@ function MainNavBar() {
             <Link href="#">
               <a>سیستم نوبت دهی</a>
             </Link>
-          </li>
+          </li> */}
         </ul>
-      </div> */}
-      <div className="text-darkGold text-sm">
-        <span className="cursor-pointer hover:text-brightGold">
+      </div>
+      <div className="text-darkGold text-lg">
+        <span className="cursor-pointer hover:text-brightGold text-sm lg:text-lg">
           <Link href="#">
             <a>ثبت نام</a>
           </Link>
         </span>
         {"/"}{" "}
-        <span className="cursor-pointer hover:text-brightGold">
+        <span className="cursor-pointer hover:text-brightGold text-sm lg:text-lg">
           <Link href="#">
             <a>ورود</a>
           </Link>
