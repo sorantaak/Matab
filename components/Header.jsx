@@ -1,7 +1,7 @@
 import LogoMatab from "./logo/LogoMatab";
 import MainNavBar from "./mainNavBar/MainNavBar";
 import OurMotto from "./OurMotto/OurMotto";
-import ToDo from "./todo/ToDo";
+import ToDoLits from "./todo/ToDoLits";
 import TopNavbarContact from "./TopNavBar/TopNavbarContact";
 
 function Header() {
@@ -12,7 +12,7 @@ function Header() {
         <MainNavBar />
         <LogoMatab />
         <OurMotto title="اولویت ما" subTitle="لبخند زیبای شماست" />
-        <ToDo />
+        <ToDoLits />
       </div>
     </div>
   );

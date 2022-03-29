@@ -19,7 +19,7 @@ function ToDo() {
     window.addEventListener("resize", handleResizeWindow);
   });
   return (
-    <div className="space-y-1 lg:flex lg:flex-row lg:space-y-0 mt-24 h-full inline-block align-middle">
+    <div className="space-y-1 lg:flex lg:flex-row lg:space-y-0 h-full inline-block align-middle">
       <div className="bg-black/50 px-2 flex lg:ml-1">
         <div className="pt-5 pl-2">
           <Image src="/image/hart.svg" width={svgWidth} height={svgHeight} />
