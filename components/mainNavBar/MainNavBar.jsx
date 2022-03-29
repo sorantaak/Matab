@@ -13,7 +13,7 @@ function MainNavBar() {
   const flexedNavbar =
     "flex flex-row justify-between py-4 transition transition-all duration-300";
   const fixedNabar =
-    "fixed min-w-full flex justify-between left-0 py-5  px-20 bg-black/70 z-50 top-0 shadow-md transition transition-all duration-400";
+    "container fixed min-w-full flex justify-between left-0 py-5  px-20 bg-black/70 z-50 top-0 shadow-md transition transition-all duration-400";
   const backhiddenNavbarSide =
     "fixed bg-gray-800/50 z-10 top-0 right-0 transition w-0 h-0 transition-all duration-400";
 
