@@ -5,8 +5,8 @@ function TopNavBarLeftSide() {
   return (
     <div>
       <ul className="flex">
-        {SocialMedia.map((item) => (
-          <li className="pr-2 text-lg" title={item.title}>
+        {SocialMedia.map((item, index) => (
+          <li key={index} className="pr-2 text-lg" title={item.title}>
             <Link href={item.path}>
               <a>{item.icon}</a>
             </Link>
