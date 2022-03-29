@@ -1,23 +1,29 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import * as FaIcons from "react-icons/fa";
+import * as RiIcons from "react-icons/ri";
 import { NavbarData } from "../../data/NavbarData";
 import Image from "next/image";
+
+import { SocialMedia } from "./../../data/SocialMediaData";
+import { TopNavBarContactData } from "../../data/TopNavbarContactData";
+
 function MainNavBar() {
+  const { mail, phone } = TopNavBarContactData[0];
   const flexedNavbar =
-    "flex flex-row justify-between py-4 transition transition-all duration-700";
+    "flex flex-row justify-between py-4 transition transition-all duration-300";
   const fixedNabar =
-    "fixed min-w-full flex justify-between left-0 py-5  px-20 bg-black/70 z-50 top-0 shadow-md transition transition-all duration-700";
+    "fixed min-w-full flex justify-between left-0 py-5  px-20 bg-black/70 z-50 top-0 shadow-md transition transition-all duration-400";
   const backhiddenNavbarSide =
-    "fixed bg-gray-800/50 z-10 top-0 right-0 transition w-0 h-0 transition-all duration-700";
+    "fixed bg-gray-800/50 z-10 top-0 right-0 transition w-0 h-0 transition-all duration-400";
 
   const backShowNavbarside =
-    "fixed bg-gray-800/50 z-10 top-0 right-0 w-full h-full transition transition-all duration-700";
+    "fixed bg-gray-800/50 z-10 top-0 right-0 w-full h-full transition transition-all duration-400";
 
   const hiddeNabarSide =
-    "w-0 h-0 bg-black fixed top-0 bottom-0 z-20 opacity-100 transition-all duration-700 -right-96";
+    "w-0 h-0 bg-black fixed top-0 bottom-0 z-20 opacity-100 transition-all duration-300 -right-96";
   const showNavbaride =
-    "w-1/2 h-full bg-black fixed top-0 bottom-0 z-20 opacity-100 transition-all duration-700 right-0";
+    "w-1/2 h-full bg-black fixed top-0 bottom-0 z-20 opacity-100 transition-all duration-300 right-0";
   const [showMenu, setShowMenu] = useState(false);
 
   const [scrolled, setScrolled] = useState(false);
@@ -25,9 +31,9 @@ function MainNavBar() {
   const handleScroll = () => {
     let offset = window.scrollY;
     console.log(offset);
-    if (offset > 50) {
+    if (offset > 500) {
       setScrolled(true);
-    } else {
+    } else if (offset < 50) {
       setScrolled(false);
     }
   };
@@ -44,17 +50,47 @@ function MainNavBar() {
 
   return (
     <div className={scrolled ? fixedNabar : flexedNavbar}>
+      {/* start hamberger icon button in mobile */}
       <div className="flex sm:hidden">
-        <FaIcons.FaBars
-          onClick={() => setShowMenu(true)}
-          className="text-darkGold text-2xl hover:text-brightGold cursor-pointer"
-        />
+        <div>
+          <FaIcons.FaBars
+            onClick={() => setShowMenu(true)}
+            className="text-darkGold text-2xl hover:text-brightGold cursor-pointer"
+          />
+        </div>
       </div>
+      {/* end hamberger icon button in mobile */}
 
+      {/*start navar in mobile */}
       <div className={showMenu ? backShowNavbarside : backhiddenNavbarSide}>
         <div className={showMenu ? showNavbaride : hiddeNabarSide}>
+          <div className="absolute bottom-0 h-20 text-center z-50 w-full">
+            <div className="text-center">
+              <ul className="">
+                {SocialMedia.map((item, index) => (
+                  <li
+                    key={index}
+                    className="pr-2 text-lg inline-block"
+                    title={item.title}
+                  >
+                    <Link href={item.path}>
+                      <a>{item.icon}</a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-col justify-center">
+                <span className="text-brightGold">{mail}</span>
+                <span className="text-brightGold">{phone}</span>
+              </div>
+            </div>
+          </div>
           <div className="relative">
-            <div className="pt-3 text-center">
+            <RiIcons.RiCloseCircleFill
+              className="z-50 text-3xl absolute cursor-pointer text-center -left-3 top-4 text-gray-700 bg-darkGold  rounded-full"
+              onClick={() => setShowMenu(false)}
+            />
+            <div className="pt-3 text-center relative">
               <Image src="/image/logo.png" width={154} height={116} />
               <ul className="flex flex-col text-right space-y-7 text-darkGold text-sm">
                 {NavbarData.map((item) => (
@@ -70,16 +106,12 @@ function MainNavBar() {
                 ))}
               </ul>
             </div>
-            <button
-              className="absolute left-0 top-2 text-darkGold"
-              onClick={() => setShowMenu(false)}
-            >
-              close
-            </button>
           </div>
         </div>
       </div>
+      {/* end navbar in mobile */}
 
+      {/* start navbar in desktoo */}
       <div>
         <ul className="hidden sm:flex flex-row text-darkGold text-sm lg:text-lg">
           {NavbarData.map((item) => (
@@ -94,6 +126,8 @@ function MainNavBar() {
           ))}
         </ul>
       </div>
+      {/* end navbar in desktop */}
+
       <div className="text-darkGold text-lg">
         <span className="cursor-pointer hover:text-brightGold text-sm lg:text-lg">
           <Link href="#">
