@@ -2,10 +2,10 @@ import CarsoulSlider from "./CarsoulSlider";
 
 function CarsoulAndAboutOffice() {
   return (
-    <div className="conatiner w-4/5 mx-auto grid grid-cols-1 lg:grid-cols-3 h-24 pt-10">
+    <div className="conatiner w-4/5 mx-auto grid grid-cols-1 lg:grid-cols-3 pt-10">
       <div className="col-span-1">
-        <h2 className="text-2xl">درباره مطب</h2>
-        <p className="text-justify pt-1 lg:text-sm pl-4">
+        <h2 className="text-4xl">درباره مطب</h2>
+        <p className="text-justify pt-1 pl-4 lg:text-sm xl:text-md 2xl:text-lg">
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
           از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و
           سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای

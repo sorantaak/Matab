@@ -9,7 +9,8 @@ module.exports = {
       colors: {
         darkGold: "#BF9957",
         brightGold: "#E7BF74",
-        backgroundHeader: "rgba(0,0,0,0.5)"
+        backgroundHeader: "rgba(0,0,0,0.5)",
+        backSectionVideo: "#ECE8D9"
       },
       backgroundImage: {
         'header-img': "url('../styles/img/header.jpg')",

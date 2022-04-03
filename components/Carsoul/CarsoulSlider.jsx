@@ -57,6 +57,12 @@ function CarsoulSlider() {
     <div ref={slideRef} className="w-full select-none relative">
       <div className="aspect-w-16 aspect-h-9">
         <img src={featuredImages[currentIndex]} alt="" />
+        {/* <Image
+          src={featuredImages[currentIndex]}
+          layout="responsive"
+          width={526}
+          height={326}
+        /> */}
       </div>
       <div className="absolute w-full top-1/2 transform -translate-y-1/2  flex justify-between">
         <button

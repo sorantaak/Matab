@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import CarsoulAndAboutOffice from '../components/Carsoul/CarsoulAndAboutOffice'
+import VideoSection from '../components/videos/VideoSection'
 export default function Home() {
   return (
     <div>
@@ -11,6 +12,7 @@ export default function Home() {
       </Head>
       <Header />
       <CarsoulAndAboutOffice />
+      <VideoSection />
     </div>
   )
 }
