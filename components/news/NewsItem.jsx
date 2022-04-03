@@ -18,7 +18,7 @@ function NewsItem() {
           از طراحان گرافیک است. .
         </p>
         <div className="flex flex-row justify-end">
-          <span className="text-darkGold hover:text-brightGold">
+          <span className="text-darkGold hover:text-brightGold text-sm">
             <Link href="#">بیشتر بخوانید</Link>
           </span>
         </div>
