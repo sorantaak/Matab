@@ -13,9 +13,11 @@ module.exports = {
       },
       backgroundImage: {
         'header-img': "url('../styles/img/header.jpg')",
-
       }
     },
   },
-  plugins: [],
+  corePlugins: {
+    aspectRatio: false,
+  },
+  plugins: [require('@tailwindcss/aspect-ratio')],
 }
