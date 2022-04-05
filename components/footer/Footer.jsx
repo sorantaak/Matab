@@ -50,7 +50,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <p className="text-center mt-10 text-gray-400">
+        <p className="text-center mt-10 text-footer">
           کلیه حقوق مادی و معنوی برای دندانپزشکی دکتر سلام رحیمی محفوظ است
         </p>
       </div>

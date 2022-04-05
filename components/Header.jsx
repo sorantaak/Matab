@@ -7,13 +7,17 @@ import TopNavbarContact from "./TopNavBar/TopNavbarContact";
 
 function Header() {
   return (
-    <div className="h-screen bg-header-img bg-no-repeat bg-cover bg-center overflow-hidden">
+    <div className="bg-header-img bg-no-repeat bg-cover bg-center overflow-hidden">
       <div className="container w-4/5 mx-auto">
-        <TopNavbarContact />
-        <MainNavBar />
-        <LogoMatab />
-        <OurMotto title="اولویت ما" subTitle="لبخند زیبای شماست" />
-        <ToDoLits />
+        <div className="grid grid-cols-1 grid-rows-1 lg:grid-rows-5">
+          <div className="h-auto">
+            <TopNavbarContact />
+            <MainNavBar />
+          </div>
+          <LogoMatab />
+          <OurMotto title="اولویت ما" subTitle="لبخند زیبای شماست" />
+          <ToDoLits />
+        </div>
       </div>
     </div>
   );

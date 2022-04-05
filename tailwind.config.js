@@ -4,7 +4,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-
+    fontFamily: {
+      'vazir': 'Vazirmatn'
+    },
     extend: {
       colors: {
         darkGold: "#BF9957",
@@ -13,6 +15,7 @@ module.exports = {
         backSectionVideo: "#ECE8D9",
         textParColor: "#363636",
         textFooter: "#C5C5C5",
+        footer: "#6A6A6A",
       },
       backgroundImage: {
         'header-img': "url('../styles/img/header.jpg')",

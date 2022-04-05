@@ -13,7 +13,7 @@ function MainNavBar() {
   const flexedNavbar =
     "flex flex-row justify-between py-4 transition transition-all duration-300";
   const fixedNabar =
-    "container fixed min-w-full flex justify-between left-0 py-5  px-20 bg-black/70 z-50 top-0 shadow-md transition transition-all duration-400";
+    "fixed min-w-full flex justify-between left-0 py-5 px-10 lg:px-40 bg-black/70 z-50 top-0 shadow-md transition transition-all duration-400";
   const backhiddenNavbarSide =
     "fixed bg-gray-800/50 z-10 top-0 right-0 transition w-0 h-0 transition-all duration-400";
 
@@ -87,7 +87,7 @@ function MainNavBar() {
           </div>
           <div className="relative">
             <RiIcons.RiCloseCircleFill
-              className="z-50 text-3xl absolute cursor-pointer text-center -left-3 top-4 text-gray-700 bg-darkGold  rounded-full"
+              className="z-50 text-3xl absolute px- cursor-pointer text-center -left-3 top-4 text-gray-700 bg-darkGold  rounded-full"
               onClick={() => setShowMenu(false)}
             />
             <div className="pt-3 text-center relative">
