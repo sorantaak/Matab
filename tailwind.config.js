@@ -11,7 +11,8 @@ module.exports = {
         brightGold: "#E7BF74",
         backgroundHeader: "rgba(0,0,0,0.5)",
         backSectionVideo: "#ECE8D9",
-        textParColor: "#363636"
+        textParColor: "#363636",
+        textFooter: "#C5C5C5",
       },
       backgroundImage: {
         'header-img': "url('../styles/img/header.jpg')",

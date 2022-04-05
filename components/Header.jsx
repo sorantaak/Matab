@@ -7,7 +7,7 @@ import TopNavbarContact from "./TopNavBar/TopNavbarContact";
 
 function Header() {
   return (
-    <div className="h-screen bg-header-img bg-no-repeat bg-cover bg-center">
+    <div className="h-screen bg-header-img bg-no-repeat bg-cover bg-center overflow-hidden">
       <div className="container w-4/5 mx-auto">
         <TopNavbarContact />
         <MainNavBar />

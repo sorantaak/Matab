@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import CarsoulAndAboutOffice from '../components/Carsoul/CarsoulAndAboutOffice'
 import VideoSection from '../components/videos/VideoSection'
 import News from '../components/news/News'
+import Footer from '../components/footer/Footer'
 export default function Home() {
   return (
     <div>
@@ -15,6 +16,7 @@ export default function Home() {
       <CarsoulAndAboutOffice />
       <VideoSection />
       <News />
+      <Footer />
     </div>
   )
 }
