@@ -19,6 +19,8 @@ module.exports = {
       },
       backgroundImage: {
         'header-img': "url('../styles/img/header.jpg')",
+        'footer-img': "url('../styles/img/footer.jpg')",
+        'backLogin-img': "url('../styles/img/login.jpg')",
       }
     },
   },

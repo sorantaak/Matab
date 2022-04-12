@@ -1,12 +1,41 @@
-import Layout from '../components/layout'
+import Layout from '../components/layout/layout'
 import '../styles/globals.css'
+import { motion, AnimatePresence } from 'framer-motion';
 
-
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
+  console.log(router.route)
+  if (router.pathname === '/login') {
+    return (
+      <AnimatePresence>
+        <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" exit="pageExit" variants={{
+          pageInitial: {
+            opacity: 0
+          },
+          pageAnimate: {
+            opacity: 1,
+            transition: {
+              delay: 0.5,
+            },
+          },
+          pageExit: {
+            backgroundColor: 'white',
+            filter: `invert()`,
+            opacity: 0,
+            transition: {
+              delay: 1,
+            },
+          }
+        }}>
+          <Component {...pageProps} />
+        </motion.div>
+      </AnimatePresence>
+    )
+  }
   return (
 
-    <Component {...pageProps} />
-
+    < Layout >
+      <Component {...pageProps} />
+    </Layout >
 
   )
 }

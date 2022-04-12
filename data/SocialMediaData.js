@@ -2,17 +2,17 @@ import * as FaIcons from "react-icons/fa";
 export const SocialMedia = [
     {
         title: 'تلگرام',
-        path: '#',
+        path: '/',
         icon: <FaIcons.FaTelegram className="text-darkGold hover:text-brightGold" />
     },
     {
         title: 'واتساپ',
-        path: '#',
+        path: '/',
         icon: <FaIcons.FaWhatsapp className="text-darkGold hover:text-brightGold" />
     },
     {
         title: 'اینستاگرام',
-        path: '#',
+        path: '/',
         icon: <FaIcons.FaInstagram className="text-darkGold hover:text-brightGold" />
     },
 ]

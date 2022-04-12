@@ -57,7 +57,7 @@ function ToDo() {
           />
         </div>
         <div className="py-2">
-          <h2 className="text-brightGold text-2xl lg:text-xl">سلامتی دندان</h2>
+          <h2 className="text-brightGold lg:text-xl">سلامتی دندان</h2>
           <p className="text-[#C5C5C5] text-justify text-sm lg:text-xs">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
             استفاده از طراحان گرافیک است. لورم ایپسوم در صنایع چاپی مورد استفاده

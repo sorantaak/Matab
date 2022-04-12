@@ -13,7 +13,7 @@ function NewsItem() {
       </div>
       <div className="col-span-1 sm:col-span-2 px-2">
         <h3 className="text-lg font-bold text-textParColor">عنوان خبر</h3>
-        <p className="text-md lg:text-lg text-justify text-textParColor">
+        <p className="text-lg lg:text-sm text-justify text-textParColor">
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
           از طراحان گرافیک است. .
         </p>

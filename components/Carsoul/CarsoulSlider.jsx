@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import Image from "next/image";
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 import * as IoIcons from "react-icons/io";
@@ -55,15 +55,15 @@ function CarsoulSlider() {
   console.log(slideRef);
   return (
     <div ref={slideRef} className="w-full select-none relative">
-      <div className="aspect-w-16 aspect-h-9">
-        <img src={featuredImages[currentIndex]} alt="" />
-        {/* <Image
-          src={featuredImages[currentIndex]}
-          layout="responsive"
-          width={526}
-          height={326}
-        /> */}
-      </div>
+      {/* <div className="aspect-w-16 aspect-h-9"> */}
+      {/* <img src={featuredImages[currentIndex]} alt="" /> */}
+      <Image
+        src={featuredImages[currentIndex]}
+        width={526}
+        height={326}
+        layout="responsive"
+      />
+      {/* </div> */}
       <div className="absolute w-full top-1/2 transform -translate-y-1/2  flex justify-between">
         <button
           className="bg-black/25 hover:bg-black/50 transition-all py-5 md:py-10 pl-2 md:pl-5 rounded-l-full"

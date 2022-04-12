@@ -7,11 +7,16 @@ import Image from "next/image";
 
 import { SocialMedia } from "./../../data/SocialMediaData";
 import { TopNavBarContactData } from "../../data/TopNavbarContactData";
+import { route } from "next/dist/server/router";
 
 function MainNavBar() {
   const { mail, phone } = TopNavBarContactData[0];
+  const [showMenu, setShowMenu] = useState(false);
+
+  const [scrolled, setScrolled] = useState(false);
+
   const flexedNavbar =
-    "flex flex-row justify-between py-4 transition transition-all duration-300";
+    "flex flex-row container w-4/5 mx-auto justify-between py-4 transition transition-all duration-300";
   const fixedNabar =
     "fixed min-w-full flex justify-between left-0 py-5 px-10 lg:px-40 bg-black/70 z-50 top-0 shadow-md transition transition-all duration-400";
   const backhiddenNavbarSide =
@@ -22,15 +27,11 @@ function MainNavBar() {
 
   const hiddeNabarSide =
     "w-0 h-0 bg-black fixed top-0 bottom-0 z-20 opacity-100 transition-all duration-300 -right-96";
-  const showNavbaride =
+  const showNavbarside =
     "w-1/2 h-full bg-black fixed top-0 bottom-0 z-20 opacity-100 transition-all duration-300 right-0";
-  const [showMenu, setShowMenu] = useState(false);
-
-  const [scrolled, setScrolled] = useState(false);
-
   const handleScroll = () => {
     let offset = window.scrollY;
-    console.log(offset);
+    // console.log(offset);
     if (offset > 500) {
       setScrolled(true);
     } else if (offset < 50) {
@@ -62,8 +63,13 @@ function MainNavBar() {
       {/* end hamberger icon button in mobile */}
 
       {/*start navar in mobile */}
-      <div className={showMenu ? backShowNavbarside : backhiddenNavbarSide}>
-        <div className={showMenu ? showNavbaride : hiddeNabarSide}>
+      <div
+        className={showMenu ? backShowNavbarside : backhiddenNavbarSide}
+        onClick={() => {
+          setShowMenu(false);
+        }}
+      >
+        <div className={showMenu ? showNavbarside : hiddeNabarSide}>
           <div className="absolute bottom-0 h-20 text-center z-50 w-full">
             <div className="text-center">
               <ul className="">
@@ -99,7 +105,7 @@ function MainNavBar() {
                     className="flex py-2 px-2 cursor-pointer hover:bg-brightGold transition-all duration-200 hover:text-gray-800"
                   >
                     <i className="ml-2 text-lg">{item.icon}</i>
-                    <Link href="#">
+                    <Link href={item.path}>
                       <a>{item.title}</a>
                     </Link>
                   </li>
@@ -119,7 +125,7 @@ function MainNavBar() {
               key={item.id}
               className="pl-10 lg:pl-12 cursor-pointer hover:text-brightGold"
             >
-              <Link href="#">
+              <Link href={item.path}>
                 <a>{item.title}</a>
               </Link>
             </li>
@@ -130,13 +136,13 @@ function MainNavBar() {
 
       <div className="text-darkGold text-lg">
         <span className="cursor-pointer hover:text-brightGold text-sm lg:text-lg">
-          <Link href="#">
+          <Link href="">
             <a>ثبت نام</a>
           </Link>
         </span>
         {"/"}{" "}
         <span className="cursor-pointer hover:text-brightGold text-sm lg:text-lg">
-          <Link href="#">
+          <Link href="/login">
             <a>ورود</a>
           </Link>
         </span>

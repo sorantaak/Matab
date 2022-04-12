@@ -10,7 +10,7 @@ export const NavbarData = [
     {
         id: 1,
         title: 'خانه',
-        path: '#',
+        path: '/',
         icon: '',
         cName: '',
         icon: <BiIcons.BiHome />
@@ -18,7 +18,7 @@ export const NavbarData = [
     {
         id: 2,
         title: 'اخبار',
-        path: '#',
+        path: '/',
         icon: '',
         cName: '',
         icon: <BiIcons.BiNews />
@@ -26,7 +26,7 @@ export const NavbarData = [
     {
         id: 3,
         title: 'سرویس ها',
-        path: '#',
+        path: '/',
         icon: '',
         cName: '',
         icon: <MdIcons.MdMedicalServices />
@@ -34,9 +34,9 @@ export const NavbarData = [
     {
         id: 4,
         title: 'سیستم نوبت دهی',
-        path: '#',
+        path: '/login',
         icon: '',
         cName: '',
-        icon: <BiIcons.BiHome />
+        icon: <BiIcons.BiSticker />
     },
 ]

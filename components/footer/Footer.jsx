@@ -16,7 +16,7 @@ function Footer() {
     mobile: "0444 224 8888",
   };
   return (
-    <div className="bg-black/75">
+    <div className=" bg-footer-img bg-center bg-cover bg-no-repeat">
       <div className="w-4/5 container mx-auto py-12">
         <div className="grid grid-cols-1 space-y-7 lg:space-y-0 lg:grid-cols-2">
           <div className="grid grid-cols-1">
@@ -24,9 +24,9 @@ function Footer() {
               <h2 className="text-white text-xl">نقشه سایت</h2>
             </div>
             <div className="grid grid-cols-2 grid-rows-1 pr-10 text-textFooter">
-              {footerMenu.map((item) => (
-                <span className="mt-3 hover:text-white">
-                  <Link href="">{item}</Link>
+              {footerMenu.map((item, index) => (
+                <span key={index} className="mt-3 hover:text-white">
+                  <Link href="/">{item}</Link>
                 </span>
               ))}
             </div>
@@ -50,7 +50,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <p className="text-center mt-10 text-footer">
+        <p className="text-center mt-10 text-brightGold">
           کلیه حقوق مادی و معنوی برای دندانپزشکی دکتر سلام رحیمی محفوظ است
         </p>
       </div>
