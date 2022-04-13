@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps, router }) {
   }
   return (
 
-    < Layout >
+    < Layout key={router.route}>
       <Component {...pageProps} />
     </Layout >
 

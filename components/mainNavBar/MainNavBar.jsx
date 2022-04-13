@@ -4,12 +4,13 @@ import * as FaIcons from "react-icons/fa";
 import * as RiIcons from "react-icons/ri";
 import { NavbarData } from "../../data/NavbarData";
 import Image from "next/image";
-
+import { useRouter } from "next/router";
 import { SocialMedia } from "./../../data/SocialMediaData";
 import { TopNavBarContactData } from "../../data/TopNavbarContactData";
 import { route } from "next/dist/server/router";
 
 function MainNavBar() {
+  const router = useRouter();
   const { mail, phone } = TopNavBarContactData[0];
   const [showMenu, setShowMenu] = useState(false);
 
@@ -136,7 +137,7 @@ function MainNavBar() {
 
       <div className="text-darkGold text-lg">
         <span className="cursor-pointer hover:text-brightGold text-sm lg:text-lg">
-          <Link href="">
+          <Link href="/">
             <a>ثبت نام</a>
           </Link>
         </span>
