@@ -3,7 +3,9 @@ export const formData = {
     passwordPalceHolder: "رمز عبور",
     mobileLabel: "شماره موبایل",
     mobilePlaceHolder: "شماره موبایل",
+    confirmLabel: "کد تاییدیه",
+    confirmPlaceholder: "کد تاییدیه",
     submitButtonLable: "ورود",
     submitButtonLableProcess: "در حال ورود...",
-    fillFormError: "لطفا اطلاعات فرم را با دقت پر کنید!!!"
+    fillFormError: "لطفا اطلاعات فرم را با دقت پر کنید!!!",
 }

@@ -48,6 +48,10 @@ function MainNavBar() {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResizeWindow);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleResizeWindow);
+    };
   });
 
   return (
@@ -66,9 +70,9 @@ function MainNavBar() {
       {/*start navar in mobile */}
       <div
         className={showMenu ? backShowNavbarside : backhiddenNavbarSide}
-        onClick={() => {
-          setShowMenu(false);
-        }}
+        // onClick={() => {
+        //   setShowMenu(false);
+        // }}
       >
         <div className={showMenu ? showNavbarside : hiddeNabarSide}>
           <div className="absolute bottom-0 h-20 text-center z-50 w-full">
@@ -137,7 +141,7 @@ function MainNavBar() {
 
       <div className="text-darkGold text-lg">
         <span className="cursor-pointer hover:text-brightGold text-sm lg:text-lg">
-          <Link href="/">
+          <Link href="/signup">
             <a>ثبت نام</a>
           </Link>
         </span>

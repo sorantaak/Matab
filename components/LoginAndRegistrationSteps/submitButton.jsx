@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { formData } from "../../data/formData";
 
 function SubmitButton(props) {
+  console.log(props);
   return (
     <div className="mt-5">
       <button
@@ -10,9 +11,7 @@ function SubmitButton(props) {
         type="button"
         className="button w-full bg-darkGold rounded-md px-3 h-14 text-white hover:bg-brightGold transition-all"
       >
-        {props.isClicked
-          ? formData.submitButtonLableProcess
-          : formData.submitButtonLable}
+        {props.isClicked ? props.titleProcess : props.titleBtn}
         {props.isClicked && (
           <svg
             role="status"

@@ -52,7 +52,7 @@ function CarsoulSlider() {
     setCurrentIndex(count);
     slideRef.current.classList.add("fade-anim");
   };
-  console.log(slideRef);
+  // console.log(slideRef);
   return (
     <div ref={slideRef} className="w-full select-none relative">
       {/* <div className="aspect-w-16 aspect-h-9"> */}

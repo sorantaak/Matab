@@ -57,7 +57,7 @@ function login() {
                         <form>
                             <InputMobile getMobile={getMobileNumber} />
                             <InputPassword getPassword={getPassword} />
-                            <SubmitButton isClicked={isClickedSubmitButton} onSubmitForm={formSubmited} />
+                            <SubmitButton titleBtn="ثبت نام" titleProcess="در حال ورود" isClicked={isClickedSubmitButton} onSubmitForm={formSubmited} />
                         </form>
                         {true &&
                             <div className="text-red-700 text-center mt-2">{error}</div>
@@ -65,7 +65,7 @@ function login() {
                         <div className="w-full flex justify-between mt-5">
                             <div>ثبت نام نکرده ام</div>
                             <div className="text-darkGold hover:text-brightGold">
-                                <Link href='/'>ثبت نام کنید</Link>
+                                <Link href='/signup'>ثبت نام کنید</Link>
                             </div>
                         </div>
                         <div className="w-full flex flex-col mt-5">
