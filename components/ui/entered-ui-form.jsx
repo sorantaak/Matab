@@ -23,13 +23,14 @@ function EnterdUiForm(props) {
             />
           </span>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-5 backdrop-blur-md bg-white/50 px-10  lg:p-3 rounded-lg shadow-md">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-5 backdrop-blur-md bg-white/50 pb-6  lg:p-3 rounded-lg shadow-md">
           <div className="py-2 px-2 lg:px-12 order-2 md:order-1">
-            <form>{props.children}</form>
-            {props.isError && (
+            {props.children}
+            {props.error && (
               <div className="text-red-700 text-center mt-2">{props.error}</div>
             )}
-            <div className="w-full flex justify-between mt-5">
+
+            {/* <div className="w-full flex justify-between mt-5">
               <div>ثبت نام نکرده ام</div>
               <div className="text-darkGold hover:text-brightGold">
                 <Link href="/signup">ثبت نام کنید</Link>
@@ -42,8 +43,9 @@ function EnterdUiForm(props) {
               <div className="text-darkGold hover:text-brightGold inline-block text-center">
                 <Link href="/">بازیابی رمز عبور</Link>
               </div>
-            </div>
+            </div> */}
           </div>
+
           <div className="w-full hidden md:block p-3 order-1 md:order-2 md:p-5 mt-10 text-center">
             <Image src="/image/logo.png" width={300} height={226} />
           </div>

@@ -56,7 +56,11 @@ function login() {
                     <div className="py-2 px-2 lg:px-20 order-2 md:order-1">
                         <form>
                             <InputMobile getMobile={getMobileNumber} />
-                            <InputPassword getPassword={getPassword} />
+                            <InputPassword
+                                label={formData.passwordLabel}
+                                placeholder={formData.passwordPalceHolder}
+                                getPassword={getPassword}
+                            />
                             <SubmitButton titleBtn="ورود" titleProcess="در حال ورود" isClicked={isClickedSubmitButton} onSubmitForm={formSubmited} />
                         </form>
                         {true &&

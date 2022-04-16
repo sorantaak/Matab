@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { formData } from "../../data/formData";
+import { useState } from "react";
 
 function SubmitButton(props) {
+  const [prp, setPrp] = useState(props);
   console.log(props);
   return (
     <div className="mt-5">

@@ -1,9 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { formData } from "../../data/formData";
+import * as RiIcons from "react-icons/ri";
 
 function InputPassword(props) {
   const [check, setCheck] = useState(0);
+  const [showPassword, setShowPassword] = useState(false);
   const [inputClasses, setClasses] = useState(
     "w-full border-2 border-gray-500 rounded-md px-3 h-14 focus:outline-0 transition-all"
   );
@@ -15,7 +16,9 @@ function InputPassword(props) {
       setCheck(0);
     }
   };
-
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
   useEffect(() => {
     switch (check) {
       case 0:
@@ -38,17 +41,26 @@ function InputPassword(props) {
   return (
     <div className="mt-4">
       <div>
-        <label htmlFor="">{props.label}</label>
+        <label className="select-none" htmlFor="pass">
+          {props.label}
+        </label>
       </div>
-      <div className="w-full mt-2">
+      <div className="w-full mt-2 relative">
         <input
           // onKeyUp={checkPasswordHandller}
+          id="pass"
           onChange={checkPasswordHandller}
           onBlur={() => {}}
-          type="password"
+          type={showPassword ? "text" : "password"}
           className={inputClasses}
           placeholder={props.placeholder}
         />
+        <span
+          className="absolute left-3 top-5 text-gray-700 cursor-pointer"
+          onClick={toggleShowPassword}
+        >
+          {showPassword ? <RiIcons.RiEyeLine /> : <RiIcons.RiEyeOffLine />}
+        </span>
       </div>
     </div>
   );
