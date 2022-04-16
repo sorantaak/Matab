@@ -50,7 +50,7 @@ function MainNavBar() {
     window.addEventListener("resize", handleResizeWindow);
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("scroll", handleResizeWindow);
+      window.removeEventListener("resize", handleResizeWindow);
     };
   });
 

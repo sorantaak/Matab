@@ -57,7 +57,7 @@ function login() {
                         <form>
                             <InputMobile getMobile={getMobileNumber} />
                             <InputPassword getPassword={getPassword} />
-                            <SubmitButton titleBtn="ثبت نام" titleProcess="در حال ورود" isClicked={isClickedSubmitButton} onSubmitForm={formSubmited} />
+                            <SubmitButton titleBtn="ورود" titleProcess="در حال ورود" isClicked={isClickedSubmitButton} onSubmitForm={formSubmited} />
                         </form>
                         {true &&
                             <div className="text-red-700 text-center mt-2">{error}</div>

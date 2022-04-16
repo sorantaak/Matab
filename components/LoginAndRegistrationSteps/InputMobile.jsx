@@ -50,8 +50,17 @@ function InputMobile(props) {
       <div className="w-full mt-2" dir="ltr">
         <input
           onChange={checkMobileNumberHandller}
-          onBlur={() => {}}
           onWheel={(event) => event.currentTarget.blur()}
+          onKeyDown={(e) => {
+            // console.log(e.code);
+            if (
+              e.code === "ArrowUp" ||
+              e.code === "ArrowDown" ||
+              e.code === "KeyE"
+            ) {
+              e.preventDefault();
+            }
+          }}
           type="number"
           className={inputClasses}
           placeholder={formData.mobilePlaceHolder}

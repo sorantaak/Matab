@@ -73,7 +73,7 @@ function signup() {
                             >
                                 <InputMobile getMobile={getMobileNumber} />
 
-                                <SubmitButton titleBtn="دریافت کد تایید" titleProcess="در حال دریافت کد تایید" isClicked={isClickedSubmitButton} onSubmitForm={formSubmited} />
+                                <SubmitButton titleBtn="ثبت نام" titleProcess="در حال دریافت کد تایید" isClicked={isClickedSubmitButton} onSubmitForm={formSubmited} />
                             </motion.div>
                         </form>
                         {true &&

@@ -12,15 +12,17 @@ import InputConfirmation from "../../components/LoginAndRegistrationSteps/inputC
 
 
 function confirmcode() {
-    const [phoneNumber, setPhoneNumber] = useState('');
+    const [confirmCode, setConfirmNumber] = useState('');
 
     const [isClickedSubmitButton, setClickedSubmitButton] = useState(false);
     const [error, setError] = useState('')
     const router = useRouter()
-    console.log(phoneNumber);
+    const testCode = "123456";
+    console.log(confirmCode);
+    const remainingTimer = 10;
     // console.log(password);
-    const getMobileNumber = (mobileNumber) => {
-        setPhoneNumber(mobileNumber)
+    const getConfirmCode = (cCode) => {
+        setConfirmNumber(cCode)
 
     }
 
@@ -28,12 +30,20 @@ function confirmcode() {
         e.preventDefault();
         console.log('click enter')
 
-        if (phoneNumber.length === 11) {
-            setClickedSubmitButton(true)
-            setTimeout(() => {
-                console.log('click enter')
-                router.push('/')
-            }, 2000)
+        if (confirmCode.length === 6) {
+
+            if (confirmCode !== testCode) {
+                setError("کد تایید صحیح نمی باشد!!")
+                setClickedSubmitButton(false)
+                return;
+            } else {
+                setClickedSubmitButton(true);
+                setTimeout(() => {
+                    console.log('click enter')
+                    router.push('/')
+                }, 2000)
+            }
+
 
         } else {
             setError(formData.fillFormError)
@@ -72,16 +82,13 @@ function confirmcode() {
                                     },
                                 }}
                             >
-                                <InputConfirmation getMobile={getMobileNumber} />
-
-                                <SubmitButton titleBtn="تاییدیه" titleProcess="در حال بررسی" isClicked={isClickedSubmitButton} onSubmitForm={formSubmited} />
+                                <InputConfirmation getConfirm={getConfirmCode} />
+                                <SubmitButton titleBtn="ثبت" titleProcess="در حال بررسی" isClicked={isClickedSubmitButton} onSubmitForm={formSubmited} />
                             </motion.div>
                         </form>
                         {true &&
                             <div className="text-red-700 text-center mt-2">{error}</div>
                         }
-
-
                         <motion.div
                             initial="hidden"
                             animate="visible"
@@ -103,7 +110,7 @@ function confirmcode() {
 
                             </div>
 
-                            <CountDownTimer />
+                            <CountDownTimer remainTime={remainingTimer} />
                             <div className="w-full flex justify-between mt-10">
                                 <div>قبلا ثبت نام کردم</div>
                                 <div className="text-darkGold hover:text-brightGold">

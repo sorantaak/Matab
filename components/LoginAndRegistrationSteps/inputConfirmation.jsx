@@ -9,14 +9,11 @@ function InputConfirmation(props) {
 
   const testNumber = /^[0-9]*/;
 
-  const checkMobileNumberHandller = (e) => {
-    if (e.target.value.length >= 11 && testNumber.test(e.target.value)) {
+  const checkConfirmHandller = (e) => {
+    if (e.target.value.length == 6 && testNumber.test(e.target.value)) {
       setCheck(1);
-      props.getMobile(e.target.value);
-    } else if (
-      e.target.value.length >= 11 &&
-      !testNumber.test(e.target.value)
-    ) {
+      props.getConfirm(e.target.value);
+    } else if (e.target.value.length >= 6 && !testNumber.test(e.target.value)) {
       setCheck(2);
     } else if (e.target.value > 0 || !testNumber.test(e.target.value)) {
       setCheck(0);
@@ -41,7 +38,7 @@ function InputConfirmation(props) {
         );
         break;
     }
-  }, [checkMobileNumberHandller]);
+  }, [checkConfirmHandller]);
   return (
     <div className="mt-1">
       <div>
@@ -49,8 +46,7 @@ function InputConfirmation(props) {
       </div>
       <div className="w-full mt-2" dir="ltr">
         <input
-          onChange={checkMobileNumberHandller}
-          onBlur={() => {}}
+          onChange={checkConfirmHandller}
           onWheel={(event) => event.currentTarget.blur()}
           onKeyDown={(e) => {
             // console.log(e.code);
