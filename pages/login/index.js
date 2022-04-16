@@ -71,7 +71,7 @@ function login() {
                         <div className="w-full flex flex-col mt-5">
                             <div className="text-center">رمز عبور خود را فراموش کرده اید؟</div>
                             <div className="text-darkGold hover:text-brightGold inline-block text-center">
-                                <Link href='/'>بازیابی رمز عبور</Link>
+                                <Link href='/resetpassword'>بازیابی رمز عبور</Link>
                             </div>
                         </div>
                     </div>

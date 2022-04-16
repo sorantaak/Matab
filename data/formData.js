@@ -8,4 +8,9 @@ export const formData = {
     submitButtonLable: "ورود",
     submitButtonLableProcess: "در حال ورود...",
     fillFormError: "لطفا اطلاعات فرم را با دقت پر کنید!!!",
+    resetPasswordLabel: "رمز عبور جدید",
+    resetPasswordPlaceHolder: "رمز عبور جدید",
+    repeatResetPasswordLabel: "تکرار رمز عبور جدید",
+    repeatResetPasswordPlaceHolder: "تکرار رمز عبور جدید",
+
 }

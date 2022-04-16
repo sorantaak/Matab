@@ -7,7 +7,7 @@ function InputPassword(props) {
   const [inputClasses, setClasses] = useState(
     "w-full border-2 border-gray-500 rounded-md px-3 h-14 focus:outline-0 transition-all"
   );
-  const checkMobileNumberHandller = (e) => {
+  const checkPasswordHandller = (e) => {
     if (e.target.value.length >= 6) {
       props.getPassword(e.target.value);
       setCheck(1);
@@ -34,20 +34,20 @@ function InputPassword(props) {
         );
         break;
     }
-  }, [checkMobileNumberHandller]);
+  }, [checkPasswordHandller]);
   return (
-    <div className="mt-1">
+    <div className="mt-4">
       <div>
-        <label htmlFor="">{formData.passwordLabel}</label>
+        <label htmlFor="">{props.label}</label>
       </div>
-      <div className="w-full mt-2 ">
+      <div className="w-full mt-2">
         <input
-          // onKeyUp={checkMobileNumberHandller}
-          onChange={checkMobileNumberHandller}
+          // onKeyUp={checkPasswordHandller}
+          onChange={checkPasswordHandller}
           onBlur={() => {}}
           type="password"
           className={inputClasses}
-          placeholder={formData.passwordPalceHolder}
+          placeholder={props.placeholder}
         />
       </div>
     </div>
