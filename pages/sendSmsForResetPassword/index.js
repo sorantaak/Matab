@@ -25,10 +25,10 @@ function index() {
             setClicked(true)
             setRemaining(10)
 
-            setTimeout(() => {
-                console.log('click enter')
-                router.push('/')
-            }, 10000)
+            // setTimeout(() => {
+            //     console.log('click enter')
+            //     router.push('/')
+            // }, 10000)
 
         } else {
             setError(formData.fillFormError)
@@ -61,7 +61,7 @@ function index() {
                 onSubmitForm={formSubmited}
             />
             {clicked && <CountDownTimer remainTime={remainig} />}
-            {clicked && <MessageBox />}
+            {clicked && <MessageBox title="اس ام اس ارسال شد" body={formData.messageForResetPassword} />}
         </PageFormUi>
     )
 }
