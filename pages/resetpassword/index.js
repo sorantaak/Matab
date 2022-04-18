@@ -40,27 +40,27 @@ function index() {
     console.log(`repeat password : ${repeatPassword}`);
     const router = useRouter()
     return (
-        <form>
-            <EnterdUiForm titlePage="بازیابی رمز عبور" error={error} backHandller={() => { router.push('/login') }}>
-                <InputPassword
-                    label={formData.resetPasswordLabel}
-                    placeholder={formData.resetPasswordPlaceHolder}
-                    getPassword={getPassword}
-                />
-                <InputPassword
-                    label={formData.repeatResetPasswordLabel}
-                    placeholder={formData.repeatResetPasswordPlaceHolder}
-                    getPassword={getRepeatPassword}
-                />
-                <SubmitButton
-                    titleBtn="رمز عبور جدید"
-                    titleProcess="در حال ایجاد رمز عبور جدید"
-                    isClicked={clicked}
-                    onSubmitForm={formSubmited}
-                />
 
-            </EnterdUiForm>
-        </form>
+        <EnterdUiForm titlePage="بازیابی رمز عبور" error={error} backHandller={() => { router.push('/login') }}>
+            <InputPassword
+                label={formData.resetPasswordLabel}
+                placeholder={formData.resetPasswordPlaceHolder}
+                getPassword={getPassword}
+            />
+            <InputPassword
+                label={formData.repeatResetPasswordLabel}
+                placeholder={formData.repeatResetPasswordPlaceHolder}
+                getPassword={getRepeatPassword}
+            />
+            <SubmitButton
+                titleBtn="رمز عبور جدید"
+                titleProcess="در حال ایجاد رمز عبور جدید"
+                isClicked={clicked}
+                onSubmitForm={formSubmited}
+            />
+
+        </EnterdUiForm>
+
     )
 }
 

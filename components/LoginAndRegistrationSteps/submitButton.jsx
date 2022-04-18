@@ -9,7 +9,7 @@ function SubmitButton(props) {
         onClick={props.onSubmitForm}
         disabled={props.isClicked}
         type="button"
-        className="button w-full bg-darkGold rounded-md px-3 h-14 text-white hover:bg-brightGold transition-all"
+        className="button w-full bg-darkGold rounded-md px-3 h-12 text-white hover:bg-brightGold transition-all"
       >
         {props.isClicked ? props.titleProcess : props.titleBtn}
         {props.isClicked && (

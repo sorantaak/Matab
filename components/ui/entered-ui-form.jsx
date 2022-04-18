@@ -1,6 +1,7 @@
 import * as BiIcons from "react-icons/bi";
-import Link from "next/link";
 import Image from "next/image";
+import ErrorForm from "./EnterWebsiteUi/ErrorForm";
+import BottomFormFeatuers from "./EnterWebsiteUi/BottomFormFeatuers";
 
 function EnterdUiForm(props) {
   return (
@@ -23,12 +24,11 @@ function EnterdUiForm(props) {
             />
           </span>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-5 backdrop-blur-md bg-white/50 pb-6  lg:p-3 rounded-lg shadow-md">
-          <div className="py-2 px-2 lg:px-12 order-2 md:order-1">
-            {props.children}
-            {props.error && (
-              <div className="text-red-700 text-center mt-2">{props.error}</div>
-            )}
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-5 backdrop-blur-md bg-white/50 rounded-lg shadow-md">
+          <div className="p-3 md:p-9 order-2 md:order-1">
+            <form>{props.children}</form>
+
+            {props.error && <ErrorForm error={props.error} />}
 
             {/* <div className="w-full flex justify-between mt-5">
               <div>ثبت نام نکرده ام</div>
