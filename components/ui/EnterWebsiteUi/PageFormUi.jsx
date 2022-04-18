@@ -48,7 +48,7 @@ function PageFormUi(props) {
             isForgot={props.showForgetLink}
             link={props.linkFeatures}
             linkTitle={props.linkTitle}
-            forgotPasswordLink="/resetpassword"
+            forgotPasswordLink="/sendSmsForResetPassword"
             forgotPasswordLinkTitle="رمز عبور را فراموش کرده ام"
           />
         </CardFormUi>

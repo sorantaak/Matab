@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import EnterdUiForm from '../../components/ui/entered-ui-form'
+// import EnterdUiForm from '../../components/ui/entered-ui-form'
+import PageFormUi from "../../components/ui/EnterWebsiteUi/PageFormUi";
 import { useRouter } from 'next/router';
 import InputPassword from '../../components/LoginAndRegistrationSteps/inputPassword';
 import { formData } from '../../data/formData';
@@ -40,8 +41,16 @@ function index() {
     console.log(`repeat password : ${repeatPassword}`);
     const router = useRouter()
     return (
-
-        <EnterdUiForm titlePage="بازیابی رمز عبور" error={error} backHandller={() => { router.push('/login') }}>
+        <PageFormUi
+            showRegisterLink={false}
+            showForgetLink={false}
+            linkFeatures=""
+            linkTitle=""
+            srcImage="/Image/logo.png"
+            error={error}
+            backArrowButtonHandlle={() => router.push('/')}
+            pageTitle="بازیابی رمز عبور"
+        >
             <InputPassword
                 label={formData.resetPasswordLabel}
                 placeholder={formData.resetPasswordPlaceHolder}
@@ -58,8 +67,8 @@ function index() {
                 isClicked={clicked}
                 onSubmitForm={formSubmited}
             />
+        </PageFormUi>
 
-        </EnterdUiForm>
 
     )
 }

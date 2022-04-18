@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 function CountDownTimer(props) {
   const [remainSecond, setReaminSecond] = useState(props.remainTime);
-  const [retry, setRetry] = useState(false);
+  // const [retry, setRetry] = useState(false);
   let intervalId;
 
   useEffect(() => {
@@ -9,9 +9,9 @@ function CountDownTimer(props) {
     return () => clearInterval(intervalId);
   }, [remainSecond]);
 
-  function updateTime(minute, second) {
+  function updateTime() {
     if (remainSecond === 0) {
-      setRetry(true);
+      // setRetry(true);
       clearInterval(intervalId);
       return;
     }

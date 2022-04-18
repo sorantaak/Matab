@@ -1,66 +1,68 @@
 import { useState } from 'react';
-import EnterdUiForm from '../../components/ui/entered-ui-form'
 import { useRouter } from 'next/router';
-import InputPassword from '../../components/LoginAndRegistrationSteps/inputPassword';
 import { formData } from '../../data/formData';
 import SubmitButton from '../../components/LoginAndRegistrationSteps/submitButton';
+import InputMobile from '../../components/LoginAndRegistrationSteps/InputMobile';
+import PageFormUi from '../../components/ui/EnterWebsiteUi/PageFormUi';
+import CountDownTimer from '../../components/CountdownTimer/count-down-timer';
+import MessageBox from '../../components/MessageBox/MessageBox';
 
 function index() {
-    const [password, setPassword] = useState('');
-    const [repeatPassword, setRepeatPassword] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
     const [clicked, setClicked] = useState(false);
     const [error, setError] = useState(null)
-    const getPassword = (password) => {
-        setPassword(password.trim())
-    }
-    const getRepeatPassword = (repeatPassword) => {
-        setRepeatPassword(repeatPassword.trim())
-    }
+    const [successMessage, setSuccessMessage] = useState('')
+    const [remainig, setRemaining] = useState(0);
+    const getMobileNumber = (mobileNumber) => {
+        setPhoneNumber(mobileNumber)
 
+    }
     const formSubmited = (e) => {
-
-        console.log('click enter')
         e.preventDefault();
-        if (password.length >= 6 && repeatPassword >= 6 && password === repeatPassword) {
+        console.log('click enter')
+
+        if (phoneNumber.length === 11) {
             setClicked(true)
+            setRemaining(10)
+
             setTimeout(() => {
                 console.log('click enter')
-                router.push('/login')
-            }, 2000)
+                router.push('/')
+            }, 10000)
 
-        } else if (password.length >= 6 && repeatPassword >= 6 && password !== repeatPassword) {
-            setError('رمزهای عبور با هم تطابق ندارند!!!')
-        }
-        else {
-            setClicked(false)
+        } else {
             setError(formData.fillFormError)
         }
     }
-    console.log(`password : ${password}`);
-    console.log(`repeat password : ${repeatPassword}`);
+
+
     const router = useRouter()
     return (
-        <form>
-            <EnterdUiForm titlePage="بازیابی رمز عبور" error={error} backHandller={() => { router.push('/login') }}>
-                <InputPassword
-                    label={formData.resetPasswordLabel}
-                    placeholder={formData.resetPasswordPlaceHolder}
-                    getPassword={getPassword}
-                />
-                <InputPassword
-                    label={formData.repeatResetPasswordLabel}
-                    placeholder={formData.repeatResetPasswordPlaceHolder}
-                    getPassword={getRepeatPassword}
-                />
-                <SubmitButton
-                    titleBtn="رمز عبور جدید"
-                    titleProcess="در حال ایجاد رمز عبور جدید"
-                    isClicked={clicked}
-                    onSubmitForm={formSubmited}
-                />
 
-            </EnterdUiForm>
-        </form>
+        <PageFormUi
+            showRegisterLink={false}
+            showForgetLink={false}
+            linkFeatures=""
+            linkTitle=""
+            srcImage="/Image/logo.png"
+            error={error}
+            backArrowButtonHandlle={() => router.push('/')}
+            pageTitle="بازیابی رمز عبور">
+            <InputMobile
+                label={formData.resetPasswordLabel}
+                placeholder={formData.resetPasswordPlaceHolder}
+                getMobile={getMobileNumber}
+            />
+
+            <SubmitButton
+                titleBtn="دریافت لینک بازیابی رمز عبور"
+                titleProcess="در حال ارسال برای شما"
+                isClicked={clicked}
+                onSubmitForm={formSubmited}
+            />
+            {clicked && <CountDownTimer remainTime={remainig} />}
+            {clicked && <MessageBox />}
+        </PageFormUi>
     )
 }
 
