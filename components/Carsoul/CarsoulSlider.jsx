@@ -54,25 +54,25 @@ function CarsoulSlider() {
   };
   // console.log(slideRef);
   return (
-    <div ref={slideRef} className="w-full select-none relative">
-      {/* <div className="aspect-w-16 aspect-h-9"> */}
-      {/* <img src={featuredImages[currentIndex]} alt="" /> */}
-      <Image
+    <div ref={slideRef} className="w-full h-full select-none relative">
+      <div className="aspect-w-16 aspect-h-9">
+        <img src={featuredImages[currentIndex]} alt="" />
+        {/* <Image
         src={featuredImages[currentIndex]}
         width={526}
         height={326}
         layout="responsive"
-      />
-      {/* </div> */}
+      /> */}
+      </div>
       <div className="absolute w-full top-1/2 transform -translate-y-1/2  flex justify-between">
         <button
-          className="bg-black/25 hover:bg-black/50 transition-all py-5 md:py-10 pl-2 md:pl-5 rounded-l-full"
+          className="bg-black/5 hover:bg-black/10 transition-all py-5 md:py-10 pl-2 md:pl-5 rounded-l-full"
           onClick={handleOndePreviose}
         >
           <IoIcons.IoIosArrowForward className="text-5xl text-brightGold pr-0" />
         </button>
         <button
-          className="bg-black/25 hover:bg-black/50 transition-all py-5 md:py-10 pr-2 md:pr-5 rounded-r-full"
+          className="bg-black/5 hover:bg-black/10 transition-all py-2 md:py-10 pr-2 md:pr-5 rounded-r-full"
           onClick={handleOneNext}
         >
           <span>

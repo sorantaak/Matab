@@ -10,7 +10,7 @@ function VideoCard() {
         <h3 className="text-md py-3 font-bold text-textParColor">
           دکتر سلام رحیمی
         </h3>
-        <p className="text-justify top-6 text-textParColor select-none">
+        <p className="text-justify top-6 text-textParColor select-none text-sm">
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
           از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و
           سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهلی
