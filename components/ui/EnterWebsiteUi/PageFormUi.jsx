@@ -7,7 +7,7 @@ import ImageFromUi from "./ImageFromUi";
 
 function PageFormUi(props) {
   return (
-    <div className="bg-backLogin-img bg-cover backdrop-blur-md bg-white/30 w-full h-screen">
+    <div className="bg-backLogin-img bg-cover backdrop-blur-md bg-white/30 w-full h-screen ">
       <div className="container w-4/5 mx-auto pt-12">
         <div className="flex flex-row w-full">
           <h2
