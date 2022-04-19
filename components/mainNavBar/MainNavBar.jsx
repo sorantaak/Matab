@@ -29,7 +29,7 @@ function MainNavBar() {
   const hiddeNabarSide =
     "w-0 h-0 bg-black fixed top-0 bottom-0 z-20 opacity-100 transition-all duration-300 -right-96";
   const showNavbarside =
-    "w-1/2 h-full bg-black fixed top-0 bottom-0 z-20 opacity-100 transition-all duration-300 right-0";
+    "w-2/3 h-full bg-black fixed top-0 bottom-0 z-20 opacity-100 transition-all duration-300 right-0";
   const handleScroll = () => {
     let offset = window.scrollY;
     // console.log(offset);
