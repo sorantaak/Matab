@@ -17,7 +17,6 @@ export default function Home() {
       <CarsoulAndAboutOffice />
       <VideoSection />
       <News />
-      <Footer />
     </div>
   )
 }
