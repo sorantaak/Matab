@@ -9,6 +9,7 @@ function NewsItem(props) {
           layout="responsive"
           width={8192}
           height={5462}
+          lazyRoot={<p>text</p>}
         />
       </div>
       <div className="col-span-1 sm:col-span-2 px-2 flex flex-col justify-between space-y-2 sm:space-y-0">

@@ -16,7 +16,7 @@ function Footer() {
     mobile: "0444 224 8888",
   };
   return (
-    <div className=" bg-footer-img bg-center bg-cover bg-no-repeat">
+    <div className=" bg-footer-img bg-center bg-cover bg-no-repeat bottom-0">
       <div className="w-4/5 container mx-auto py-12">
         <div className="grid grid-cols-1 space-y-7 lg:space-y-0 lg:grid-cols-2">
           <div className="grid grid-cols-1">

@@ -11,7 +11,9 @@ function Layout(props) {
         <MainNavBar />
       </header>
       <main>{props.children}</main>
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
     </Fragment>
   );
 }
