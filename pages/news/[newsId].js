@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { useRouter } from 'next/router'
-import { getNewsById } from '../../data/newsDat'
+import { getNewsById } from '../../data/newsData'
+import Row from '../../components/ui/row/Row';
+import Image from 'next/image';
+import Head from 'next/head';
 
 function news() {
     const router = useRouter();
@@ -10,10 +13,22 @@ function news() {
         return (<p>loading...</p>)
     }
     return (
-        <div className='text-center p-40'>
-            <p>test</p>
-            {news.title}
-        </div>
+        <Fragment>
+            <Head>
+                <title>{news.title}</title>
+                <meta name="description" content={news.newSummary} />
+                <link rel="icon" href="/logo.ico" />
+            </Head>
+            <Row>
+                <div className='mt-10'>
+                    <h2 className='mb-5 font-bold text-gray-600'>{news.title}</h2>
+                    <div className='text-center'>
+                        <Image src={news.image} width={900} height={600} layout="responsive" />
+                    </div>
+                </div>
+                <p className='my-7 text-gray-600 text-justify leading-10'>{news.newsBody}</p>
+            </Row>
+        </Fragment>
     )
 }
 

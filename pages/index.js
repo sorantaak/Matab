@@ -3,8 +3,6 @@ import Header from '../components/Header'
 import CarsoulAndAboutOffice from '../components/Carsoul/CarsoulAndAboutOffice'
 import VideoSection from '../components/videos/VideoSection'
 import News from '../components/news/News'
-import Footer from '../components/footer/Footer'
-import Layout from '../components/layout/layout'
 export default function Home() {
   return (
     <div>

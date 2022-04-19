@@ -1,4 +1,4 @@
-import { newsData } from "../../data/newsDat";
+import { newsData } from "../../data/newsData";
 import NewsItem from "./NewsItem";
 
 function News() {
