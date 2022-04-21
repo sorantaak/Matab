@@ -3,7 +3,10 @@ import Link from "next/dist/client/link";
 import { Shimmer } from "react-shimmer";
 function NewsItem(props) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 rounded-md overflow-hidden shadow-lg border-0 sm:border-r-4 border-brightGold">
+    <div
+      id="news"
+      className="grid grid-cols-1 sm:grid-cols-3 rounded-md overflow-hidden shadow-lg border-0 sm:border-r-4 border-brightGold"
+    >
       <div className="col-span-1 h-full" fallback>
         <Image
           src={props.image}
