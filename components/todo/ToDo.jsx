@@ -22,7 +22,12 @@ function ToDo() {
     <div className="space-y-1 lg:flex lg:flex-row lg:space-y-0 h-full inline-block align-middle">
       <div className="bg-black/50 px-2 flex lg:ml-1">
         <div className="pt-5 pl-2">
-          <Image src="/image/hart.svg" width={svgWidth} height={svgHeight} />
+          <Image
+            src="/image/hart.svg"
+            width={svgWidth}
+            height={svgHeight}
+            alt="hart"
+          />
         </div>
         <div className="py-2">
           <h2 className="text-brightGold text-2xl lg:text-xl">سلامتی دندان</h2>
@@ -36,7 +41,12 @@ function ToDo() {
 
       <div className="bg-black/50 px-2 flex lg:ml-1">
         <div className="pt-5 pl-2 lg:pl-0">
-          <Image src="/image/helthy.svg" width={svgWidth} height={svgHeight} />
+          <Image
+            src="/image/helthy.svg"
+            width={svgWidth}
+            height={svgHeight}
+            alt="helthy"
+          />
         </div>
         <div className="py-2">
           <h2 className="text-brightGold text-2xl lg:text-xl">سلامتی دندان</h2>
@@ -54,6 +64,7 @@ function ToDo() {
             src="/image/implants.svg"
             width={svgWidth}
             height={svgHeight}
+            alt="implants"
           />
         </div>
         <div className="py-2">
