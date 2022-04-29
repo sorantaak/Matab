@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 function MyApp({ Component, pageProps, router }) {
   console.log(router.route)
-  if (router.pathname === '/login' || router.pathname === '/signup' || router.pathname === '/confirmcode' || router.pathname === '/resetpassword' || router.pathname === '/sendSmsForResetPassword') {
+  if (router.pathname === '/login' || router.pathname === '/signup' || router.pathname === '/confirmcode' || router.pathname === '/resetpassword' || router.pathname === '/sendSmsForResetPassword' || router.pathname === '/dashboard') {
     return (
       <AnimatePresence>
         <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" exit="pageExit" variants={{
