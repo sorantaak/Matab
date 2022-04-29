@@ -1,14 +1,16 @@
 import React, { Fragment, useState } from 'react'
 import { useRouter } from 'next/router'
-import { getNewsById } from '../../data/newsData'
+import { getNewsById, newsData } from '../../data/newsData'
+// import  from '../../data/newsData';
 import Row from '../../components/ui/row/Row';
 import Image from 'next/image';
 import Head from 'next/head';
 import * as BiIcons from "react-icons/bi";
 
-function news() {
+function News(props) {
+    const news = props.loadNews;
     const router = useRouter();
-    const news = getNewsById(router.query.newsId)
+    // const news = getNewsById(router.query.newsId)
     console.log(news)
     if (!news) {
         return (<p>loading...</p>)
@@ -31,7 +33,7 @@ function news() {
                     </div>
 
                     <div className='text-center p-10'>
-                        <Image src={news.image} width={900} height={600} layout="responsive" />
+                        <Image src={news.image} width={900} height={600} layout="responsive" alt={news.title} />
                     </div>
                     <p className='text-gray-600 text-justify leading-10'>{news.newsBody}</p>
                 </div>
@@ -41,4 +43,35 @@ function news() {
     )
 }
 
-export default news
+export default News
+
+export async function getStaticProps(context) {
+    const { params } = context;
+    console.log(params.newsId)
+    const news = await getNewsById(params.newsId);
+    console.log(news)
+    if (!news) {
+        return { notFound: true } //return 404 page when product is empty
+    }
+    return {
+        props: { loadNews: news }
+    }
+}
+
+export async function getStaticPaths() {
+    const data = newsData;
+    const ids = data.map(item => item.id);
+    const pathsWithParams = ids.map((id) => ({ params: { newsId: id } }));
+    console.log(pathsWithParams);
+    return {
+        paths: pathsWithParams,
+        // [
+        //     { params: { pid: "p1" } },
+        //     // { params: { pid: "p2" } },
+        //     // { params: { pid: "p3" } },
+        // ],
+        // fallback: true
+        fallback: 'blocking'
+        // fallback: true
+    }
+}

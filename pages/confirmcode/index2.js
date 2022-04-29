@@ -11,7 +11,7 @@ import CountDownTimer from "../../components/CountdownTimer/count-down-timer";
 import InputConfirmation from "../../components/LoginAndRegistrationSteps/inputConfirmation"
 
 
-function confirmcode() {
+function Confirmcode() {
     const [confirmCode, setConfirmNumber] = useState('');
 
     const [isClickedSubmitButton, setClickedSubmitButton] = useState(false);
@@ -140,7 +140,7 @@ function confirmcode() {
                                 },
                             }}
                         >
-                            <Image src='/image/logo.png' width={300} height={226} />
+                            <Image src='/image/logo.png' width={300} height={226} alt="logo" />
                         </motion.div>
                     </div>
 
@@ -150,4 +150,4 @@ function confirmcode() {
     )
 }
 
-export default confirmcode
+export default Confirmcode

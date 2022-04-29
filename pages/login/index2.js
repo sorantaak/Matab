@@ -9,7 +9,7 @@ import SubmitButton from "../../components/LoginAndRegistrationSteps/submitButto
 import { formData } from "../../data/formData";
 
 
-function login() {
+function Login() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     const [isClickedSubmitButton, setClickedSubmitButton] = useState(false);
@@ -80,7 +80,7 @@ function login() {
                         </div>
                     </div>
                     <div className="w-full hidden md:block p-3 order-1 md:order-2 md:p-5 mt-10 text-center">
-                        <Image src='/image/logo.png' width={300} height={226} />
+                        <Image src='/image/logo.png' width={300} height={226} alt="logo" />
                     </div>
                 </div>
             </div>
@@ -88,4 +88,4 @@ function login() {
     )
 }
 
-export default login
+export default Login

@@ -11,7 +11,7 @@ import Head from "next/head";
 
 
 
-function signup() {
+function Signup() {
     const [phoneNumber, setPhoneNumber] = useState('');
 
     const [isClickedSubmitButton, setClickedSubmitButton] = useState(false);
@@ -133,7 +133,7 @@ function signup() {
                                     },
                                 }}
                             >
-                                <Image src='/image/logo.png' width={300} height={226} />
+                                <Image src='/image/logo.png' width={300} height={226} alt="logo" />
                             </motion.div>
                         </div>
 
@@ -144,4 +144,4 @@ function signup() {
     )
 }
 
-export default signup
+export default Signup

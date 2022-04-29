@@ -9,7 +9,7 @@ import PageFormUi from "../../components/ui/EnterWebsiteUi/PageFormUi";
 
 
 
-function signup() {
+function Signup() {
     const [phoneNumber, setPhoneNumber] = useState('');
 
     const [isClickedSubmitButton, setClickedSubmitButton] = useState(false);
@@ -61,4 +61,4 @@ function signup() {
     )
 }
 
-export default signup
+export default Signup

@@ -7,7 +7,7 @@ import { formData } from "../../data/formData";
 import PageFormUi from "../../components/ui/EnterWebsiteUi/PageFormUi";
 
 
-function login() {
+function Login() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     const [isClickedSubmitButton, setClickedSubmitButton] = useState(false);
@@ -61,4 +61,4 @@ function login() {
     )
 }
 
-export default login
+export default Login

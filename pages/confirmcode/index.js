@@ -6,7 +6,7 @@ import CountDownTimer from "../../components/CountdownTimer/count-down-timer";
 import InputConfirmation from "../../components/LoginAndRegistrationSteps/inputConfirmation"
 import PageFormUi from "../../components/ui/EnterWebsiteUi/PageFormUi";
 
-function confirmcode() {
+function Confirmcode() {
     const [confirmCode, setConfirmNumber] = useState('');
 
     const [isClickedSubmitButton, setClickedSubmitButton] = useState(false);
@@ -63,4 +63,4 @@ function confirmcode() {
     )
 }
 
-export default confirmcode
+export default Confirmcode

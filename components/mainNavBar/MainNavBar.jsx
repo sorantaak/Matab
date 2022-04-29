@@ -102,7 +102,7 @@ function MainNavBar() {
               onClick={() => setShowMenu(false)}
             />
             <div className="pt-3 text-center relative">
-              <Image src="/image/logo.png" width={154} height={116} />
+              <Image src="/image/logo.png" width={154} height={116} alt="img" />
               <ul className="flex flex-col text-right space-y-7 text-darkGold text-sm">
                 {NavbarData.map((item) => (
                   <li

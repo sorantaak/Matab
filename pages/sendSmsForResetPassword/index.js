@@ -7,7 +7,7 @@ import PageFormUi from '../../components/ui/EnterWebsiteUi/PageFormUi';
 import CountDownTimer from '../../components/CountdownTimer/count-down-timer';
 import MessageBox from '../../components/MessageBox/MessageBox';
 
-function index() {
+function SendSmsForResetPassword() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [clicked, setClicked] = useState(false);
     const [error, setError] = useState(null)
@@ -66,4 +66,4 @@ function index() {
     )
 }
 
-export default index
+export default SendSmsForResetPassword

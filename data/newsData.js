@@ -43,6 +43,6 @@ export const newsData = [
     },
 ]
 
-export function getNewsById(id) {
+export async function getNewsById(id) {
     return newsData.find((news) => news.id === id)
 }

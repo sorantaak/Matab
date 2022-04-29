@@ -6,7 +6,7 @@ import InputPassword from '../../components/LoginAndRegistrationSteps/inputPassw
 import { formData } from '../../data/formData';
 import SubmitButton from '../../components/LoginAndRegistrationSteps/submitButton';
 
-function index() {
+function ResetPassword() {
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
     const [clicked, setClicked] = useState(false);
@@ -73,4 +73,4 @@ function index() {
     )
 }
 
-export default index
+export default ResetPassword

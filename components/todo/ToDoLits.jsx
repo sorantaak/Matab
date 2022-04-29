@@ -49,6 +49,7 @@ function ToDoLits() {
                   src={jobItem.iconSrc}
                   width={100}
                   height={93}
+                  alt="img"
                 />
               </div>
               <div className="basis-11/12">

@@ -56,7 +56,7 @@ function CarsoulSlider() {
   return (
     <div ref={slideRef} className="w-full h-full select-none relative">
       <div className="aspect-w-16 aspect-h-9">
-        <img src={featuredImages[currentIndex]} alt="" />
+        <img src={featuredImages[currentIndex]} alt="pic" />
         {/* <Image
         src={featuredImages[currentIndex]}
         width={526}

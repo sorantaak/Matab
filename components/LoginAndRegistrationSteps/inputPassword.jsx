@@ -37,7 +37,7 @@ function InputPassword(props) {
         );
         break;
     }
-  }, [checkPasswordHandller]);
+  }, [check, checkPasswordHandller]);
   return (
     <div className="mt-4">
       <div>
