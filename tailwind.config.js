@@ -16,6 +16,9 @@ module.exports = {
         textParColor: "#363636",
         textFooter: "#C5C5C5",
         footer: "#6A6A6A",
+        sidebar: "#ECEBE8",
+        sidebarIcon: '#9E9C9C',
+        sidebarMenu: '#333333'
       },
       backgroundImage: {
         'header-img': "url('../styles/img/header.jpg')",

@@ -1,6 +1,6 @@
 import Image from "next/dist/client/image";
 import Link from "next/dist/client/link";
-import { Shimmer } from "react-shimmer";
+
 function NewsItem(props) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 rounded-md overflow-hidden shadow-lg border-0 sm:border-r-4 border-brightGold">
