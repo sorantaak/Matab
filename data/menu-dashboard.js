@@ -3,7 +3,7 @@ import * as VsIcons from "react-icons/vsc";
 export const menuDashboard = [
     {
         title: 'داشبورد',
-        icon: <VsIcons.VscTools />,
+        icon: <VsIcons.VscDashboard />,
         link: '/dashboard'
     },
     {

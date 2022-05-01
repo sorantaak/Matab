@@ -18,7 +18,8 @@ module.exports = {
         footer: "#6A6A6A",
         sidebar: "#ECEBE8",
         sidebarIcon: '#9E9C9C',
-        sidebarMenu: '#333333'
+        sidebarMenu: '#333333',
+
       },
       backgroundImage: {
         'header-img': "url('../styles/img/header.jpg')",
