@@ -14,8 +14,8 @@ function UserAvatar(props) {
         className="w-10 h-10 rounded-full ml-1"
         src="/image/user.jpg"
         alt="Rounded avatar"
-        width={40}
-        height={40}
+        width={45}
+        height={45}
       />
       <div>
         <VsIcons.VscChevronDown

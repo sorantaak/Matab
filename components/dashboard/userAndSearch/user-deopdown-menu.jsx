@@ -19,10 +19,12 @@ function UserropDownMenu(props) {
       {menuItem.map((item, index) => (
         <li
           key={index}
-          className="text-sm  px-6 py-4  w-full l  flex flex-row items-center group"
+          className="text-sm px-6 py-3  w-full flex flex-row items-center group"
         >
-          <div className="bg-sidebar rounded-full w-10 h-10 ml-2 flex justify-center transition-all items-center text-lg group-hover:text-brightGold">
-            {item.icon}
+          <div className="bg-sidebar rounded-full w-10 h-10 ml-2 flex justify-center transition-all items-center text-lg group-hover:text-brightGold group-hover:bg-darkGold">
+            <span className="transition-all group-hover:text-white">
+              {item.icon}
+            </span>
           </div>
           <span className="transition-all group-hover:text-darkGold">
             {item.title}
