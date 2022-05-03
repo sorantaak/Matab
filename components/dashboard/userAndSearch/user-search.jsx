@@ -4,7 +4,7 @@ import UserAvatar from "./user-avatar";
 
 function UserAndSearch(props) {
   return (
-    <div className=" container w-11/12 mx-auto">
+    <div className="container mx-auto w-11/12">
       <div className="py-2 flex flex-row justify-between">
         <SearchDashboard />
         <UserAvatar

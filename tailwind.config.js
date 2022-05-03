@@ -7,6 +7,10 @@ module.exports = {
     fontFamily: {
       'vazir': 'Vazirmatn'
     },
+    // container: {
+    //   center: true,
+    //   padding: '1rem',
+    // },
     extend: {
       colors: {
         darkGold: "#BF9957",

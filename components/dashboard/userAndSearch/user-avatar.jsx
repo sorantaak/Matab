@@ -5,13 +5,13 @@ import UserropDownMenu from "./user-deopdown-menu";
 function UserAvatar(props) {
   return (
     <div
-      className={`flex flex-row justify-start items-center cursor-pointer relative ${
+      className={`flex flex-row gap-1 justify-start items-center cursor-pointer relative ${
         props.isClicked && "z-20"
       }`}
       onClick={props.onClick}
     >
       <Image
-        className="w-10 h-10 rounded-full ml-1"
+        className="w-10 h-10 rounded-full"
         src="/image/user.jpg"
         alt="Rounded avatar"
         width={45}
