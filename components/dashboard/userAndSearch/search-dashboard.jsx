@@ -7,9 +7,9 @@ function SearchDashboard() {
       <input
         type="text"
         placeholder="جستجو"
-        className="w-full pl-8 pr-5 py-2 bg-sidebar text-gray-500 rounded-full placeholder:text-xs text-sm   focus:bg-white focus:outline focus:outline-darkGold focus:shadow-xl focus:shadow-black/5 transition-all hover:shadow-xl hover:shadow-black/5"
+        className="w-full pl-8 pr-5 py-3 bg-sidebar text-gray-500 rounded-full placeholder:text-xs text-sm   focus:bg-white focus:outline focus:outline-darkGold focus:shadow-xl focus:shadow-black/5 transition-all hover:shadow-xl hover:shadow-black/5"
       />
-      <AiIcons.AiOutlineSearch className="absolute left-0 top-[8px] text-xl ml-3 text-sidebarIcon" />
+      <AiIcons.AiOutlineSearch className="absolute left-1 top-[12px] text-xl ml-3 text-sidebarIcon" />
     </div>
   );
 }
