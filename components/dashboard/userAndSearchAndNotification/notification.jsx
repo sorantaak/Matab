@@ -1,19 +1,31 @@
 import * as FaIcons from "react-icons/fa";
+import { useState } from "react";
 import NotificationropDown from "./notification-dropdown";
+import { notificationData } from "../../../data/user-dashboard-data";
 function Notification(props) {
+  const [allData, setData] = useState(notificationData);
+  function claearAllData() {
+    setData(null);
+  }
   return (
-    <div className={`cursor-pointer relative`}>
+    <div className="cursor-pointer select-none relative">
       <div onClick={props.onClick}>
         <FaIcons.FaBell
           className={`text-textFooter text-[30px] -rotate-45 ${
             props.isClicked && "z-10"
           }`}
         />
-        <div className="absolute -top-1 -left-2 rounded-full h-5 w-5 border-2 p-2 border-white text-[9px] flex justify-center items-center text-white bg-red-700">
-          <span>35</span>
-        </div>
+        {allData && (
+          <div className="absolute -top-1 -left-2 rounded-full h-5 w-5 border-2 p-2 border-white text-[9px] flex justify-center items-center text-white bg-red-700">
+            <span>{allData.length}</span>
+          </div>
+        )}
       </div>
-      <NotificationropDown isClicked={props.isClicked} />
+      <NotificationropDown
+        isClicked={props.isClicked}
+        onClearAllNotification={claearAllData}
+        allData={allData}
+      />
     </div>
   );
 }

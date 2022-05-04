@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { notificationData } from "../../../data/user-dashboard-data";
 
 function NotificationropDown(props) {
-  const [allData, setData] = useState(notificationData);
-  function claearAllData() {
-    setData(null);
-  }
+  // const [allData, setData] = useState(notificationData);
+  // function claearAllData() {
+  //   setData(null);
+  // }
 
   return (
     <ul
@@ -19,14 +18,14 @@ function NotificationropDown(props) {
         <h2 className="font-bold px-6 py-3">اعلانها</h2>
         <span
           className="text-sm transition-all text-red-600 px-6 py-3 hover:text-red-900"
-          onClick={claearAllData}
+          onClick={props.onClearAllNotification}
         >
           پاک کردن همه
         </span>
       </div>
 
-      {allData ? (
-        allData.map((item, index) => (
+      {props.allData ? (
+        props.allData.map((item, index) => (
           <li
             key={index}
             className="text-sm px-6 py-3  w-full flex flex-row items-center group select-none hover:cursor-pointer"
