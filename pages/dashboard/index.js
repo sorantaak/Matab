@@ -39,10 +39,11 @@ function Dashboard() {
     return (
         <div className='flex flex-row'>
             {isShowBackPopup && <BackPopUp onShowBackPopUp={handleBackPopUp} />}
-            <div className='w-64 h-screen bg-sidebar justify-between items-center hidden sm:flex  flex-col '>
+            <div className='w-64  h-screen bg-sidebar justify-between items-center hidden lg:flex flex-col '>
                 <Sidebar />
                 <AddPatientButton />
             </div>
+
             <div className='w-full '>
                 <UserAndSearchNotificattion onClick={handleBackPopUp} ishowUserMenu={isShowUserMenu} isShowNotification={isShowNotification} />
 

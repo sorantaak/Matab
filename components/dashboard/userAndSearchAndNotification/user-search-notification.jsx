@@ -6,9 +6,10 @@ import UserAvatar from "./user-avatar";
 function UserAndSearchNotificattion(props) {
   return (
     <div className="container mx-auto w-11/12">
-      <div className="py-2 flex flex-row justify-between">
+      <div className="py-2 flex gap-4 md:gap-0 flex-row justify-between">
         <SearchDashboard />
-        <div className="flex flex-row justify-center items-center gap-6">
+
+        <div className="flex flex-row justify-center items-center gap-2">
           <Notification
             onClick={() => props.onClick("notification")}
             isClicked={props.isShowNotification}

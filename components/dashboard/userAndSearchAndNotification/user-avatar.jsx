@@ -9,16 +9,23 @@ function UserAvatar(props) {
         className="flex flex-row gap-1 justify-start items-center cursor-pointer"
         onClick={props.onClick}
       >
-        <Image
-          className="w-10 h-10 rounded-full"
+        {/* <Image
+          className="w-full h-full rounded-full"
           src="/image/user.jpg"
-          alt="Rounded avatar"
+          alt="avatar"
           width={45}
           height={45}
-        />
+        /> */}
+        <div className="w-10 h-10">
+          <img
+            src="/image/user.jpg"
+            alt="profile"
+            className="w-full h-full rounded-full"
+          />
+        </div>
         <div>
           <VsIcons.VscChevronDown
-            className={`transition-all ${props.isClicked && "rotate-180"}`}
+            className={`transition-all  ${props.isClicked && "rotate-180"}`}
           />
         </div>
       </div>
