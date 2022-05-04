@@ -30,12 +30,12 @@ function MenuItme(props) {
   }, [router]);
   return (
     <li
-      className="flex flex-row  py-1 transition-all  cursor-pointer select-none"
+      className="flex flex-row py-1 transition-all cursor-pointer select-none"
       onClick={() => {
         router.push(props.link);
       }}
     >
-      <span className="ml-5 text-sidebarIcon text-xl">
+      <span className="ml-5 text-sidebarIcon text-2xl">
         {/* <VsIcons.VscTools /> */}
         {props.icon}
       </span>

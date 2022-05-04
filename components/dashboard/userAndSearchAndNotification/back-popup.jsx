@@ -1,6 +1,3 @@
-import React from "react";
-import UserropDownMenu from "./user-deopdown-menu";
-
 function BackPopUp(props) {
   return (
     <div
