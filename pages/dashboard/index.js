@@ -18,8 +18,9 @@ function Dashboard() {
     // console.log(dashboardRoute);
     const router = useRouter()
     const handleBackPopUp = (type) => {
-
+        console.log(type);
         switch (type) {
+
             case 'user':
                 setIsShowBackPopup(!isShowBackPopup);
                 setIsUserMenu(!isShowUserMenu)
