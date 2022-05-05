@@ -12,6 +12,13 @@ function Dashboard() {
     const [isShowBackPopup, setIsShowBackPopup] = useState(false)
     const [isShowUserMenu, setIsUserMenu] = useState(false)
     const [isShowNotification, setIsShowNotification] = useState(false)
+    const [isShowSidebarInMobile, setIsShowSidebarInMobile] = useState(false);
+    const onHandleSideBarInMobile = () => {
+        setIsShowSidebarInMobile(true);
+    }
+    const onCloseSidebar = () => {
+        setIsShowSidebarInMobile(false);
+    }
     const dashboardRoute = menuDashboard.map((menue) => {
         return menue.link;
     })
@@ -39,13 +46,13 @@ function Dashboard() {
     return (
         <div className='flex flex-row'>
             {isShowBackPopup && <BackPopUp onShowBackPopUp={handleBackPopUp} />}
-            <div className='w-64  h-screen bg-sidebar justify-between items-center hidden lg:flex flex-col '>
-                <Sidebar />
+            <div className={`fixed ${isShowSidebarInMobile ? "right-0 z-20 flex flex-col shadow-lg" : "-right-full"} transition-all w-60 h-screen bg-sidebar lg:flex justify-between items-center  lg:flex-col lg:static`}>
+                <Sidebar onCloseSidebar={onCloseSidebar} isMobile={isShowSidebarInMobile} />
                 <AddPatientButton />
             </div>
 
             <div className='w-full '>
-                <UserAndSearchNotificattion onClick={handleBackPopUp} ishowUserMenu={isShowUserMenu} isShowNotification={isShowNotification} />
+                <UserAndSearchNotificattion onClick={handleBackPopUp} ishowUserMenu={isShowUserMenu} isShowNotification={isShowNotification} onClickHamberger={onHandleSideBarInMobile} />
 
 
                 {

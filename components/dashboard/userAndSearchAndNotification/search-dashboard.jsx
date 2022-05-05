@@ -1,10 +1,15 @@
 import React from "react";
 import * as AiIcons from "react-icons/ai";
 
-function SearchDashboard() {
+function SearchDashboard(props) {
   return (
     <div className="flex items-center gap-1 w-72  lg:w-72 relative bg-transparent group">
-      <div className="flex lg:hidden">menu</div>
+      <div
+        className="flex lg:hidden cursor-pointer"
+        onClick={props.onClickHamberger}
+      >
+        <AiIcons.AiOutlineMenu className="text-3xl" />
+      </div>
       <input
         type="text"
         placeholder="جستجو"

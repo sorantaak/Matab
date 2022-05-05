@@ -5,11 +5,18 @@ import MnueItem from "./menu-sidebar";
 import MenueSideBar from "./menu-sidebar";
 // import { useState } from "react";
 
-function Sidebar() {
+function Sidebar(props) {
   // const [isActive, setActive] = useState(false);
   //
   return (
-    <div className="">
+    <div className="relative">
+      <div
+        className="absolute -left-[45px] top-5 z-20 rounded-full cursor-pointer lg:hidden"
+        onClick={props.onCloseSidebar}
+      >
+        <VsIcons.VscChromeClose className="text-2xl text-gray-500" />
+      </div>
+
       <SidebarLogo />
       <MenueSideBar />
     </div>
