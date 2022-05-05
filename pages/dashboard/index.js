@@ -46,7 +46,7 @@ function Dashboard() {
     return (
         <div className='flex flex-row'>
             {isShowBackPopup && <BackPopUp onShowBackPopUp={handleBackPopUp} />}
-            <div className={`fixed ${isShowSidebarInMobile ? "right-0 z-20 flex flex-col shadow-lg" : "-right-full"} transition-all w-60 h-screen bg-sidebar lg:flex justify-between items-center  lg:flex-col lg:static`}>
+            <div className={`fixed  z-20 overflow-y-auto ${isShowSidebarInMobile ? "right-0  shadow-lg" : "-right-full"} transition-all w-60 h-full lg:h-screen bg-sidebar flex justify-between items-center flex-col lg:static`}>
                 <Sidebar onCloseSidebar={onCloseSidebar} isMobile={isShowSidebarInMobile} />
                 <AddPatientButton />
             </div>
