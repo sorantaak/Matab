@@ -23,7 +23,7 @@ module.exports = {
         sidebar: "#ECEBE8",
         sidebarIcon: '#9E9C9C',
         sidebarMenu: '#333333',
-
+        trTable: '#F6F5F2'
       },
       backgroundImage: {
         'header-img': "url('../styles/img/header.jpg')",

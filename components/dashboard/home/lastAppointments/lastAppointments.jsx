@@ -1,121 +1,177 @@
 function LastAppointments() {
   return (
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <div className="relative overflow-x-auto mt-10">
+      <h2 className="py-3">آخرین وقت ملاقات ها</h2>
+      <table className="w-full text-sm text-left  text-gray-500 dark:text-gray-400">
+        <thead className="text-xs text-gray-700 uppercase bg-sidebar">
           <tr>
-            <th scope="col" class="px-6 py-3">
-              Product name
+            <th scope="col" className="px-6 py-3">
+              عکس
             </th>
-            <th scope="col" class="px-6 py-3">
-              Color
+            <th scope="col" className="px-6 py-3">
+              نام
             </th>
-            <th scope="col" class="px-6 py-3">
-              Category
+            <th scope="col" className="px-6 py-3">
+              نام خانوادگی
             </th>
-            <th scope="col" class="px-6 py-3">
-              Price
+            <th scope="col" className="px-6 py-3">
+              تاریخ ویزیت
             </th>
-            <th scope="col" class="px-6 py-3">
-              <span class="sr-only">Edit</span>
+            <th scope="col" className="px-6 py-3">
+              ساعت ویزیت
             </th>
+            <th scope="col" className="px-6 py-3">
+              شماره موبایل
+            </th>
+            <th scope="col" className="px-6 py-3">
+              آخرین وضعیت
+            </th>
+            {/* <th scope="col" className="px-6 py-3">
+              <span className="sr-only">ساعت ویزیت</span>
+            </th>
+            <th scope="col" className="px-6 py-3">
+              <span className="sr-only">شماره موبایل</span>
+            </th>
+            <th scope="col" className="px-6 py-3">
+              <span className="sr-only">آخرین وضعیت</span>
+            </th> */}
           </tr>
         </thead>
         <tbody>
-          <tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-            >
-              Apple MacBook Pro 17"
-            </th>
-            <td class="px-6 py-4">Sliver</td>
-            <td class="px-6 py-4">Laptop</td>
-            <td class="px-6 py-4">$2999</td>
-            <td class="px-6 py-4 text-right">
-              <a
-                href="#"
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              >
-                Edit
-              </a>
+          <tr className="bg-trTable border-y border-white">
+            <td className="px-6 py-4">
+              <img
+                src="/image/user.jpg"
+                alt="user"
+                className="rounded-full w-7 h-7"
+              />
             </td>
+            <td className="px-6 py-4">سوران</td>
+            <td className="px-6 py-4">تاک</td>
+            <td className="px-6 py-4">1401/06/30</td>
+            <td className="px-6 py-4">1830-20:30</td>
+            <td className="px-6 py-4">09145458447</td>
+            <td className="px-6 py-4">عصب کشی دندان</td>
           </tr>
-          <tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-            >
-              Microsoft Surface Pro
-            </th>
-            <td class="px-6 py-4">White</td>
-            <td class="px-6 py-4">Laptop PC</td>
-            <td class="px-6 py-4">$1999</td>
-            <td class="px-6 py-4 text-right">
-              <a
-                href="#"
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              >
-                Edit
-              </a>
+          <tr className="bg-trTable border-y border-white">
+            <td className="px-6 py-4">
+              <img
+                src="/image/user.jpg"
+                alt="user"
+                className="rounded-full w-7 h-7"
+              />
             </td>
+            <td className="px-6 py-4">سوران</td>
+            <td className="px-6 py-4">تاک</td>
+            <td className="px-6 py-4">1401/06/30</td>
+            <td className="px-6 py-4">1830-20:30</td>
+            <td className="px-6 py-4">09145458447</td>
+            <td className="px-6 py-4">عصب کشی دندان</td>
           </tr>
-          <tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-            >
-              Magic Mouse 2
-            </th>
-            <td class="px-6 py-4">Black</td>
-            <td class="px-6 py-4">Accessories</td>
-            <td class="px-6 py-4">$99</td>
-            <td class="px-6 py-4 text-right">
-              <a
-                href="#"
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              >
-                Edit
-              </a>
+          <tr className="bg-trTable border-y border-white">
+            <td className="px-6 py-4">
+              <img
+                src="/image/user.jpg"
+                alt="user"
+                className="rounded-full w-7 h-7"
+              />
             </td>
+            <td className="px-6 py-4">سوران</td>
+            <td className="px-6 py-4">تاک</td>
+            <td className="px-6 py-4">1401/06/30</td>
+            <td className="px-6 py-4">1830-20:30</td>
+            <td className="px-6 py-4">09145458447</td>
+            <td className="px-6 py-4">عصب کشی دندان</td>
           </tr>
-          <tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-            >
-              Google Pixel Phone
-            </th>
-            <td class="px-6 py-4">Gray</td>
-            <td class="px-6 py-4">Phone</td>
-            <td class="px-6 py-4">$799</td>
-            <td class="px-6 py-4 text-right">
-              <a
-                href="#"
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              >
-                Edit
-              </a>
+          <tr className="bg-trTable border-y border-white">
+            <td className="px-6 py-4">
+              <img
+                src="/image/user.jpg"
+                alt="user"
+                className="rounded-full w-7 h-7"
+              />
             </td>
+            <td className="px-6 py-4">سوران</td>
+            <td className="px-6 py-4">تاک</td>
+            <td className="px-6 py-4">1401/06/30</td>
+            <td className="px-6 py-4">1830-20:30</td>
+            <td className="px-6 py-4">09145458447</td>
+            <td className="px-6 py-4">عصب کشی دندان</td>
           </tr>
-          <tr class="odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-            >
-              Apple Watch 5
-            </th>
-            <td class="px-6 py-4">Red</td>
-            <td class="px-6 py-4">Wearables</td>
-            <td class="px-6 py-4">$999</td>
-            <td class="px-6 py-4 text-right">
-              <a
-                href="#"
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              >
-                Edit
-              </a>
+          <tr className="bg-trTable border-y border-white">
+            <td className="px-6 py-4">
+              <img
+                src="/image/user.jpg"
+                alt="user"
+                className="rounded-full w-7 h-7"
+              />
             </td>
+            <td className="px-6 py-4">سوران</td>
+            <td className="px-6 py-4">تاک</td>
+            <td className="px-6 py-4">1401/06/30</td>
+            <td className="px-6 py-4">1830-20:30</td>
+            <td className="px-6 py-4">09145458447</td>
+            <td className="px-6 py-4">عصب کشی دندان</td>
+          </tr>
+          <tr className="bg-trTable border-y border-white">
+            <td className="px-6 py-4">
+              <img
+                src="/image/user.jpg"
+                alt="user"
+                className="rounded-full w-7 h-7"
+              />
+            </td>
+            <td className="px-6 py-4">سوران</td>
+            <td className="px-6 py-4">تاک</td>
+            <td className="px-6 py-4">1401/06/30</td>
+            <td className="px-6 py-4">1830-20:30</td>
+            <td className="px-6 py-4">09145458447</td>
+            <td className="px-6 py-4">عصب کشی دندان</td>
+          </tr>
+          <tr className="bg-trTable border-y border-white">
+            <td className="px-6 py-4">
+              <img
+                src="/image/user.jpg"
+                alt="user"
+                className="rounded-full w-7 h-7"
+              />
+            </td>
+            <td className="px-6 py-4">سوران</td>
+            <td className="px-6 py-4">تاک</td>
+            <td className="px-6 py-4">1401/06/30</td>
+            <td className="px-6 py-4">1830-20:30</td>
+            <td className="px-6 py-4">09145458447</td>
+            <td className="px-6 py-4">عصب کشی دندان</td>
+          </tr>
+          <tr className="bg-trTable border-y border-white">
+            <td className="px-6 py-4">
+              <img
+                src="/image/user.jpg"
+                alt="user"
+                className="rounded-full w-7 h-7"
+              />
+            </td>
+            <td className="px-6 py-4">سوران</td>
+            <td className="px-6 py-4">تاک</td>
+            <td className="px-6 py-4">1401/06/30</td>
+            <td className="px-6 py-4">1830-20:30</td>
+            <td className="px-6 py-4">09145458447</td>
+            <td className="px-6 py-4">عصب کشی دندان</td>
+          </tr>
+          <tr className="bg-trTable border-y border-white">
+            <td className="px-6 py-4">
+              <img
+                src="/image/user.jpg"
+                alt="user"
+                className="rounded-full w-7 h-7"
+              />
+            </td>
+            <td className="px-6 py-4">سوران</td>
+            <td className="px-6 py-4">تاک</td>
+            <td className="px-6 py-4">1401/06/30</td>
+            <td className="px-6 py-4">1830-20:30</td>
+            <td className="px-6 py-4">09145458447</td>
+            <td className="px-6 py-4">عصب کشی دندان</td>
           </tr>
         </tbody>
       </table>

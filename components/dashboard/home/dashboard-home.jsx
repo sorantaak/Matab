@@ -15,6 +15,7 @@ function DahboardHome() {
           />
         ))}
       </div>
+      <LastAppointments />
     </div>
   );
 }

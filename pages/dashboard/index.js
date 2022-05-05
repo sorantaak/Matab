@@ -6,13 +6,16 @@ import DahboardHome from "../../components/dashboard/home/dashboard-home";
 import UserAndSearchNotificattion from "../../components/dashboard/userAndSearchAndNotification/user-search-notification";
 import CountDownTimer from "../../components/CountdownTimer/count-down-timer";
 import BackPopUp from "../../components/dashboard/userAndSearchAndNotification/back-popup";
-import { useState } from "react";
-import { FaLess } from "react-icons/fa";
+import { useEffect, useState } from "react";
+
 function Dashboard() {
     const [isShowBackPopup, setIsShowBackPopup] = useState(false)
     const [isShowUserMenu, setIsUserMenu] = useState(false)
     const [isShowNotification, setIsShowNotification] = useState(false)
     const [isShowSidebarInMobile, setIsShowSidebarInMobile] = useState(false);
+    useEffect(() => {
+        isShowSidebarInMobile ? document.body.style.overflow = "hidden" : document.body.style.overflow = ""
+    }, [isShowSidebarInMobile])
     const onHandleSideBarInMobile = () => {
         setIsShowSidebarInMobile(true);
     }
@@ -46,12 +49,13 @@ function Dashboard() {
     return (
         <div className='flex flex-row'>
             {isShowBackPopup && <BackPopUp onShowBackPopUp={handleBackPopUp} />}
-            <div className={`fixed  z-20 overflow-y-auto ${isShowSidebarInMobile ? "right-0  shadow-lg" : "-right-full"} transition-all w-60 h-full lg:h-screen bg-sidebar flex justify-between items-center flex-col lg:static`}>
+            {isShowSidebarInMobile && <BackPopUp />}
+            <div className={`fixed z-20 overflow-y-auto ${isShowSidebarInMobile ? "right-0 shadow-lg" : "-right-full"} lg:right-0  bottom-0 top-0 transition-all duration-500 w-60  bg-sidebar flex justify-between items-center flex-col`}>
                 <Sidebar onCloseSidebar={onCloseSidebar} isMobile={isShowSidebarInMobile} />
                 <AddPatientButton />
             </div>
 
-            <div className='w-full '>
+            <div className='w-full lg:pr-56'>
                 <UserAndSearchNotificattion onClick={handleBackPopUp} ishowUserMenu={isShowUserMenu} isShowNotification={isShowNotification} onClickHamberger={onHandleSideBarInMobile} />
 
 
