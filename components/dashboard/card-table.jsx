@@ -7,7 +7,7 @@ function CardTable({ tableTitle, tBodyData }) {
         {tBodyData.map((user) => (
           <div
             key={user.id}
-            className="rounded-lg overflow-hidden flex flex-col space-y-3 shadow-xl border"
+            className="rounded-lg overflow-hidden flex flex-col space-y-3 shadow-xl border justify-end"
           >
             <div className="w-full">
               {user.userPhotoSrc ? (
@@ -37,7 +37,7 @@ function CardTable({ tableTitle, tBodyData }) {
               <div className="pt-1">{user.number}</div>
               <FaIcons.FaMobileAlt />
             </div>
-            <div className="h-10 w-fulls bg-darkGold flex justify-center items-center text-sm text-white">
+            <div className="h-10 w-fulls bg-darkGold flex justify-center items-center text-sm text-white place-items-end">
               <p className="text-center">{user.lastStatus}</p>
             </div>
           </div>
