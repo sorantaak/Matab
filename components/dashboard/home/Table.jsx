@@ -1,7 +1,7 @@
 import * as FaIcons from "react-icons/fa";
 function Table({ tableTitle, thData, tBodyData }) {
   return (
-    <div className="relative overflow-x-auto mt-10">
+    <div className="relative overflow-x-auto mt-10 hidden md:block">
       <h2 className="py-3">{tableTitle}</h2>
       <table className="w-full text-sm text-left  text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-sidebar">
@@ -42,13 +42,26 @@ function Table({ tableTitle, thData, tBodyData }) {
               key={user.id}
               className="border-y border-white even:bg-gray-100 odd:bg-gray-50 transition-all hover:tr-shadow"
             >
-              <td className="px-6 py-3">{user.userPhotoSrc}</td>
+              <td className="px-6 py-3">
+                {user.userPhotoSrc ? (
+                  <img
+                    src={user.userPhotoSrc}
+                    alt="user"
+                    className="rounded-full w-5 h-5"
+                  />
+                ) : (
+                  <div className="w-5 h-5">
+                    <FaIcons.FaUserCircle className="h-full w-full text-gray-300" />
+                  </div>
+                )}
+              </td>
               <td className="px-6 py-3">{user.name}</td>
               <td className="px-6 py-3">{user.family}</td>
               <td className="px-6 py-3">{user.visitDate}</td>
               <td className="px-6 py-3">{user.visitTime}</td>
               <td className="px-0 py-3 text-darkGold flex justify-end items-center">
-                <span>{user.number}</span> <FaIcons.FaMobileAlt />
+                <span className="pt-[2px]">{user.number}</span>{" "}
+                <FaIcons.FaMobileAlt />
               </td>
               <td className="px-6 py-3">{user.lastStatus}</td>
             </tr>

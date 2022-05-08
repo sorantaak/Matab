@@ -4,11 +4,7 @@ export const lastAppointment = {
     tBody: [
         {
             id: "user1",
-            userPhotoSrc: <img
-                src="/image/user.jpg"
-                alt="user"
-                className="rounded-full w-5 h-5"
-            />,
+            userPhotoSrc: "/image/user.jpg",
             name: "سوران",
             family: "تاک",
             visitDate: new Date().toLocaleDateString('fa-IR'),
@@ -18,11 +14,7 @@ export const lastAppointment = {
         },
         {
             id: "user2",
-            userPhotoSrc: <img
-                src="/image/user.jpg"
-                alt="user"
-                className="rounded-full w-5 h-5"
-            />,
+            userPhotoSrc: "",
             name: "سوران",
             family: "تاک",
             visitDate: new Date().toLocaleDateString('fa-IR'),
@@ -32,11 +24,7 @@ export const lastAppointment = {
         },
         {
             id: "user3",
-            userPhotoSrc: <img
-                src="/image/user.jpg"
-                alt="user"
-                className="rounded-full w-5 h-5"
-            />,
+            userPhotoSrc: "/image/user.jpg",
             name: "سوران",
             family: "تاک",
             visitDate: new Date().toLocaleDateString('fa-IR'),
@@ -46,11 +34,7 @@ export const lastAppointment = {
         },
         {
             id: "user4",
-            userPhotoSrc: <img
-                src="/image/user.jpg"
-                alt="user"
-                className="rounded-full w-5 h-5"
-            />,
+            userPhotoSrc: "/image/user.jpg",
             name: "سوران",
             family: "تاک",
             visitDate: new Date().toLocaleDateString('fa-IR'),
