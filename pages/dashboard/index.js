@@ -57,8 +57,6 @@ function Dashboard() {
 
             <div className='w-full lg:pr-56'>
                 <UserAndSearchNotificattion onClick={handleBackPopUp} ishowUserMenu={isShowUserMenu} isShowNotification={isShowNotification} onClickHamberger={onHandleSideBarInMobile} />
-
-
                 {
                     !dashboardRoute.includes(router.asPath) && <div>not found page</div>
 

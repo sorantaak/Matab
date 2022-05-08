@@ -54,3 +54,11 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+@layer utilities {
+  .tr-shadow {
+    box-shadow: 0 0 10px #0000001f;
+    transform: scale(1);
+    z-index: 1;
+  }
+}

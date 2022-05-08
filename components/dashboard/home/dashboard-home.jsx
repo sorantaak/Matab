@@ -1,5 +1,5 @@
 import { tcData } from "../../../data/tc-data";
-import LastAppointments from "./lastAppointments/lastAppointments";
+import LastAppointmentsTable from "./lastAppointments/lastAppointmentsTable";
 import TcCard from "./tcCard/tc-card";
 
 function DahboardHome() {
@@ -15,7 +15,7 @@ function DahboardHome() {
           />
         ))}
       </div>
-      <LastAppointments />
+      <LastAppointmentsTable />
     </div>
   );
 }
