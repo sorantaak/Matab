@@ -12,7 +12,7 @@ function UserropDownMenu(props) {
     <ul
       className={`absolute w-48 bg-white shadow-lg top-full mt-1 left-0 rounded-lg transition-all ease-linear ${
         props.isClicked
-          ? "opacity-100 translate-y-0 z-10"
+          ? "opacity-100 translate-y-0 z-20"
           : "opacity-0 translate-y-8 -z-10"
       }`}
     >

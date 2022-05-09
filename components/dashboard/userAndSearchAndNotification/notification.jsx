@@ -11,8 +11,8 @@ function Notification(props) {
     <div className="cursor-pointer select-none relative">
       <div onClick={props.onClick}>
         <FaIcons.FaBell
-          className={`text-textFooter text-[30px] -rotate-45 ${
-            props.isClicked && "z-10"
+          className={`text-[30px] -rotate-45 transition-all ${
+            props.isClicked ? "z-20 text-darkGold " : "text-textFooter"
           }`}
         />
         {allData && (

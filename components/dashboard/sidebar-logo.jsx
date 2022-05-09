@@ -3,7 +3,7 @@ import React from "react";
 
 function SidebarLogo() {
   return (
-    <div className=" py-4">
+    <div className="py-4">
       <Image
         src="/image/logo.png"
         width={5256}

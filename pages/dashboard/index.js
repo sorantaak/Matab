@@ -48,25 +48,36 @@ function Dashboard() {
     }
     return (
         <div className='flex flex-row'>
+
             {isShowBackPopup && <BackPopUp onShowBackPopUp={handleBackPopUp} />}
             {isShowSidebarInMobile && <BackPopUp />}
-            <div className={`fixed z-20 overflow-y-auto ${isShowSidebarInMobile ? "right-0 shadow-lg" : "-right-full"} lg:right-0  bottom-0 top-0 transition-all duration-500 w-60  bg-sidebar flex justify-between items-center flex-col`}>
+
+            <div className={`fixed overflow-y-auto ${isShowSidebarInMobile ? "right-0 shadow-lg z-[12]" : "-right-full z-10"} lg:right-0  bottom-0 top-0 transition-all duration-500 w-60  bg-sidebar flex justify-between items-center flex-col`}>
                 <Sidebar onCloseSidebar={onCloseSidebar} isMobile={isShowSidebarInMobile} />
                 <AddPatientButton />
             </div>
 
             <div className='w-full lg:pr-56'>
-                <UserAndSearchNotificattion onClick={handleBackPopUp} ishowUserMenu={isShowUserMenu} isShowNotification={isShowNotification} onClickHamberger={onHandleSideBarInMobile} />
-                {
-                    !dashboardRoute.includes(router.asPath) && <div>not found page</div>
+                <nav className="">
+                    <UserAndSearchNotificattion onClick={handleBackPopUp} ishowUserMenu={isShowUserMenu} isShowNotification={isShowNotification} onClickHamberger={onHandleSideBarInMobile} />
+                </nav>
 
-                }
-                {
-                    router.asPath === '/dashboard' && <DahboardHome />
-                }
-                {
-                    router.asPath === '/dashboard#visits' && <CountDownTimer remainTime={20} />
-                }
+                <main className="scroll">
+
+
+                    {
+                        !dashboardRoute.includes(router.asPath) && <div>not found page</div>
+
+                    }
+                    {
+                        router.asPath === '/dashboard' && <DahboardHome />
+                    }
+                    {
+                        router.asPath === '/dashboard#visits' && <CountDownTimer remainTime={20} />
+                    }
+                </main>
+
+
             </div>
         </div>
     )
