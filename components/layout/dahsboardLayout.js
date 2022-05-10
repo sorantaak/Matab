@@ -40,13 +40,14 @@ function DahsboardLayout(props) {
                 setIsUserMenu(false);
                 setIsShowNotification(false);
                 setIsShowBackPopup(false);
+                setIsShowSidebarInMobile(false)
                 break;
         }
     }
     return (
         <>
             {isShowBackPopup && <BackPopUp onShowBackPopUp={handleBackPopUp} />}
-            {isShowSidebarInMobile && <BackPopUp />}
+            {isShowSidebarInMobile && <BackPopUp onShowBackPopUp={handleBackPopUp} />}
 
             <header>
                 <nav className="w-full lg:pr-56">

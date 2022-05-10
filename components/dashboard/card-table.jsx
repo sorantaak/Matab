@@ -13,7 +13,7 @@ function CardTable({ tableTitle, tBodyData, isAction }) {
           >
             {isAction && (
               <div className="absolute top-2 left-2 flex flex-col space-y-2">
-                <div className="rounded-full w-10 h-10 bg-blue-400 flex justify-center items-center shadow-lg shadow-black/25">
+                <div className="rounded-full w-10 h-10 bg-blue-300 flex justify-center items-center shadow-lg shadow-black/25">
                   <GrIcons.GrEdit />
                 </div>
                 <div className="rounded-full w-10 h-10 bg-red-500 flex justify-center items-center shadow-lg shadow-black/25">

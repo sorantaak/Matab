@@ -69,10 +69,10 @@ function Table({ tableTitle, thData, tBodyData, isAction }) {
               {isAction && (
                 <td className="">
                   <div className="flex flex-row justify-center items-center">
-                    <div className="rounded-full w-8 h-8 transition-all bg-blue-400 hover:bg-blue-500 flex justify-center items-center ml-1">
+                    <div className="rounded-full w-8 h-8 transition-all bg-blue-300 hover:bg-blue-400 flex justify-center items-center cursor-pointer ml-1">
                       <GrIcons.GrEdit />
                     </div>
-                    <div className="rounded-full w-8 h-8 transition-all bg-red-500 hover:bg-red-600 flex justify-center items-center">
+                    <div className="rounded-full w-8 h-8 transition-all bg-red-500 hover:bg-red-600 flex justify-center items-center cursor-pointer">
                       <MdIcons.MdDelete className="text-lg text-white" />
                     </div>
                   </div>
