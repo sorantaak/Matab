@@ -1,7 +1,7 @@
 import { menuDashboard } from "../../data/menu-dashboard";
 import MenuItme from "./menu-item";
 
-function MenueSideBar() {
+function MenueSideBar(props) {
   return (
     <div className="flex flex-col justify-between">
       <ul className="flex flex-col gap-2">
@@ -11,6 +11,7 @@ function MenueSideBar() {
             title={item.title}
             icon={item.icon}
             link={item.link}
+            onCloseSideBar={props.onCloseSideBar}
           />
         ))}
       </ul>

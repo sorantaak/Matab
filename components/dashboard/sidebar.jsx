@@ -18,7 +18,7 @@ function Sidebar(props) {
       </div>
 
       <SidebarLogo />
-      <MenueSideBar />
+      <MenueSideBar onCloseSideBar={props.onCloseSidebar} />
     </div>
   );
 }

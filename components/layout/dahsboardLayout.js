@@ -5,7 +5,7 @@ import UserAndSearchNotificattion from '../dashboard/userAndSearchAndNotificatio
 import { useEffect, useState } from "react";
 import BackPopUp from "../dashboard/userAndSearchAndNotification/back-popup";
 function DahsboardLayout(props) {
-    useState
+
     const [isShowBackPopup, setIsShowBackPopup] = useState(false)
     const [isShowUserMenu, setIsUserMenu] = useState(false)
     const [isShowNotification, setIsShowNotification] = useState(false)

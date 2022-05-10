@@ -32,6 +32,7 @@ function MenuItme(props) {
     <li
       className="flex flex-row py-1 transition-all cursor-pointer select-none"
       onClick={() => {
+        props.onCloseSideBar();
         router.push(props.link);
       }}
     >
