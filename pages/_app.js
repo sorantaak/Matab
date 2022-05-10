@@ -1,15 +1,25 @@
 import Layout from '../components/layout/layout'
 import '../styles/globals.css'
 import { motion, AnimatePresence } from 'framer-motion';
+import Dashboard from './dashboard';
+import DahsboardLayout from '../components/layout/dahsboardLayout';
 
 function MyApp({ Component, pageProps, router }) {
-  // console.log(router.route)
+  console.log(pageProps)
   if (router.pathname === '/news/[newsId]' || router.pathname === '/') {
     return (
       < Layout key={router.route}>
         <Component {...pageProps} />
       </Layout >
 
+    )
+  }
+  if (router.pathname === '/dashboard' || router.pathname === '/dashboard/visits') {
+
+    return (
+      <DahsboardLayout key={router.route}>
+        <Component {...pageProps} />
+      </DahsboardLayout>
     )
   }
 

@@ -9,7 +9,7 @@ export const menuDashboard = [
     {
         title: 'وقت ملاقات',
         icon: <VsIcons.VscTable />,
-        link: '/dashboard#visits'
+        link: '/dashboard/visits'
     },
     {
         title: 'مراجعه کنندگان',
