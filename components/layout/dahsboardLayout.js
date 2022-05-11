@@ -54,7 +54,7 @@ function DahsboardLayout(props) {
                     <UserAndSearchNotificattion onClick={handleBackPopUp} ishowUserMenu={isShowUserMenu} isShowNotification={isShowNotification} onClickHamberger={onHandleSideBarInMobile} />
                 </nav>
             </header>
-            <div className={`fixed overflow-y-auto ${isShowSidebarInMobile ? "right-0 shadow-lg z-[12]" : "-right-full z-10"} lg:right-0  bottom-0 top-0 transition-all duration-500 w-60  bg-sidebar flex justify-between items-center flex-col`}>
+            <div className={`fixed overflow-y-auto ${isShowSidebarInMobile ? "right-0 shadow-lg z-[12]" : "-right-[1000px] z-10"} lg:right-0  bottom-0 top-0 transition-all duration-500 w-60  bg-sidebar flex justify-between items-center flex-col`}>
                 <Sidebar onCloseSidebar={onCloseSidebar} isMobile={isShowSidebarInMobile} />
                 <AddPatientButton />
             </div>

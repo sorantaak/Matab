@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps, router }) {
             },
             pageExit: {
               backgroundColor: 'white',
-              filter: `invert()`,
+              // filter: `invert()`,
               opacity: 0,
               transition: {
                 delay: 0.05,
