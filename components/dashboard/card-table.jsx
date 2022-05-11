@@ -5,7 +5,7 @@ function CardTable({ tableTitle, tBodyData, isAction }) {
   return (
     <div className=" my-8 md:hidden">
       <h2 className="mb-2">{tableTitle}</h2>
-      <div className=" grid grid-col grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-11 ">
+      <div className="grid grid-col grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-11">
         {tBodyData.map((user) => (
           <div
             key={user.id}

@@ -16,7 +16,7 @@ function Notification(props) {
           }`}
         />
         {allData && (
-          <div className="absolute -top-1 -left-2 rounded-full h-5 w-5 border-2 p-2 border-white text-[9px] flex justify-center items-center text-white bg-red-700">
+          <div className="absolute -top-1 -left-2 rounded-full h-5 w-5 border-2 pt-1 border-white text-[9px] flex justify-center items-center text-white bg-red-700">
             <span>{allData.length}</span>
           </div>
         )}

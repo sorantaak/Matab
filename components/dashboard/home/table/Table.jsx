@@ -1,11 +1,11 @@
 import * as FaIcons from "react-icons/fa";
 import * as GrIcons from "react-icons/gr";
 import * as MdIcons from "react-icons/md";
+
 function Table({ tableTitle, thData, tBodyData, isAction }) {
   return (
     <div className="relative overflow-x-auto mt-2 hidden md:block">
-      <h2 className="py-3">{tableTitle}</h2>
-      <table className="w-full text-sm text-left  text-gray-500 dark:text-gray-400">
+      <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-sidebar">
           <tr className="transition-all hover:shadow-lg">
             {thData.map((item, index) => (
@@ -14,31 +14,8 @@ function Table({ tableTitle, thData, tBodyData, isAction }) {
               </th>
             ))}
           </tr>
-          {/* <tr>
-            <th scope="col" className="px-6 py-3">
-              عکس
-            </th>
-            <th scope="col" className="px-6 py-3">
-              نام
-            </th>
-            <th scope="col" className="px-6 py-3">
-              نام خانوادگی
-            </th>
-            <th scope="col" className="px-6 py-3">
-              تاریخ ویزیت
-            </th>
-            <th scope="col" className="px-6 py-3">
-              ساعت ویزیت
-            </th>
-            <th scope="col" className="px-6 py-3">
-              شماره موبایل
-            </th>
-            <th scope="col" className="px-6 py-3">
-              آخرین وضعیت
-            </th>
-          </tr> */}
         </thead>
-        <tbody className="">
+        <tbody className="overflow-y-auto">
           {tBodyData.map((user) => (
             <tr
               key={user.id}
@@ -80,72 +57,6 @@ function Table({ tableTitle, thData, tBodyData, isAction }) {
               )}
             </tr>
           ))}
-          {/* <tr key={user.id} className="border-y border-white even:bg-gray-100 odd:bg-gray-50">
-            <td className="px-6 py-3">
-              <img
-                src="/image/user.jpg"
-                alt="user"
-                className="rounded-full w-5 h-5"
-              />
-            </td>
-            <td className="px-6 py-3">سوران</td>
-            <td className="px-6 py-3">تاک</td>
-            <td className="px-6 py-3">1401/06/30</td>
-            <td className="px-6 py-3">1830-20:30</td>
-            <td className="px-0 py-3 text-darkGold">
-              <div className="flex justify-end items-center">
-                <span>09145458447</span>
-                <AiIcons.AiTwotoneMobile />
-                <FaIcons.FaMobileAlt />
-              </div>
-            </td>
-            <td className="px-6 py-3">عصب کشی دندان</td>
-          </tr>
-          <tr className="border-y border-white even:bg-gray-100 odd:bg-gray-50">
-            <td className="px-6 py-3">
-              <img
-                src="/image/user.jpg"
-                alt="user"
-                className="rounded-full w-5 h-5"
-              />
-            </td>
-            <td className="px-6 py-3">سوران</td>
-            <td className="px-6 py-3">تاک</td>
-            <td className="px-6 py-3">1401/06/30</td>
-            <td className="px-6 py-3">1830-20:30</td>
-            <td className="px-6 py-3">09145458447</td>
-            <td className="px-6 py-3">عصب کشی دندان</td>
-          </tr>
-          <tr className="border-y border-white even:bg-gray-100 odd:bg-gray-50">
-            <td className="px-6 py-3">
-              <img
-                src="/image/user.jpg"
-                alt="user"
-                className="rounded-full w-5 h-5"
-              />
-            </td>
-            <td className="px-6 py-3">سوران</td>
-            <td className="px-6 py-3">تاک</td>
-            <td className="px-6 py-3">1401/06/30</td>
-            <td className="px-6 py-3">1830-20:30</td>
-            <td className="px-6 py-3">09145458447</td>
-            <td className="px-6 py-3">عصب کشی دندان</td>
-          </tr>
-          <tr className="border-y border-white even:bg-gray-100 odd:bg-gray-50">
-            <td className="px-6 py-3">
-              <img
-                src="/image/user.jpg"
-                alt="user"
-                className="rounded-full w-5 h-5"
-              />
-            </td>
-            <td className="px-6 py-3">سوران</td>
-            <td className="px-6 py-3">تاک</td>
-            <td className="px-6 py-3">1401/06/30</td>
-            <td className="px-6 py-3">1830-20:30</td>
-            <td className="px-6 py-3">09145458447</td>
-            <td className="px-6 py-3">عصب کشی دندان</td>
-          </tr> */}
         </tbody>
       </table>
     </div>

@@ -58,7 +58,7 @@ function DahsboardLayout(props) {
                 <Sidebar onCloseSidebar={onCloseSidebar} isMobile={isShowSidebarInMobile} />
                 <AddPatientButton />
             </div>
-            <main>
+            <main className="">
                 {props.children}
             </main>
         </>

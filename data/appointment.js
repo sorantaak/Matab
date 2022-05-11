@@ -85,12 +85,184 @@ export const appointment = {
         {
             id: "user9",
             userPhotoSrc: "",
-            name: "امیر",
-            family: "فدایی",
+            name: "لاله",
+            family: "عباسی",
             visitDate: new Date().toLocaleDateString('fa-IR'),
             visitTime: "20:30 - 18:30",
             number: "09356897412",
             lastStatus: "عصب کشی دندان"
         },
+        {
+            id: "user10",
+            userPhotoSrc: "",
+            name: "کوثر",
+            family: "رحیمی",
+            visitDate: new Date().toLocaleDateString('fa-IR'),
+            visitTime: "20:30 - 18:30",
+            number: "09356897412",
+            lastStatus: "عصب کشی دندان"
+        },
+        {
+            id: "user11",
+            userPhotoSrc: "/image/user.jpg",
+            name: "سوما",
+            family: "رش احمدی",
+            visitDate: new Date().toLocaleDateString('fa-IR'),
+            visitTime: "20:30 - 18:30",
+            number: "09356897412",
+            lastStatus: "عصب کشی دندان"
+        },
+        {
+            id: "user12",
+            userPhotoSrc: "/image/user.jpg",
+            name: "نادر",
+            family: "مینایی",
+            visitDate: new Date().toLocaleDateString('fa-IR'),
+            visitTime: "20:30 - 18:30",
+            number: "09356897412",
+            lastStatus: "عصب کشی دندان"
+        },
+        {
+            id: "user13",
+            userPhotoSrc: "",
+            name: "ظاهیر",
+            family: "آقابرا",
+            visitDate: new Date().toLocaleDateString('fa-IR'),
+            visitTime: "20:30 - 18:30",
+            number: "09356897412",
+            lastStatus: "عصب کشی دندان"
+        },
+        {
+            id: "user14",
+            userPhotoSrc: "/image/user.jpg",
+            name: "هیمن",
+            family: "حیدری",
+            visitDate: new Date().toLocaleDateString('fa-IR'),
+            visitTime: "20:30 - 18:30",
+            number: "09356897412",
+            lastStatus: "عصب کشی دندان"
+        },
+        {
+            id: "user15",
+            userPhotoSrc: "/image/user.jpg",
+            name: "رامین",
+            family: "لطفی",
+            visitDate: new Date().toLocaleDateString('fa-IR'),
+            visitTime: "20:30 - 18:30",
+            number: "09356897412",
+            lastStatus: "عصب کشی دندان"
+        },
+        {
+            id: "user16",
+            userPhotoSrc: "",
+            name: "زانیار",
+            family: "قادری",
+            visitDate: new Date().toLocaleDateString('fa-IR'),
+            visitTime: "20:30 - 18:30",
+            number: "09356897412",
+            lastStatus: "عصب کشی دندان"
+        },
+        {
+            id: "user17",
+            userPhotoSrc: "/image/user.jpg",
+            name: "آرزو",
+            family: "رحیمی",
+            visitDate: new Date().toLocaleDateString('fa-IR'),
+            visitTime: "20:30 - 18:30",
+            number: "09356897412",
+            lastStatus: "عصب کشی دندان"
+        },
+        {
+            id: "user18",
+            userPhotoSrc: "",
+            name: "مینا",
+            family: "حاتمی",
+            visitDate: new Date().toLocaleDateString('fa-IR'),
+            visitTime: "20:30 - 18:30",
+            number: "09356897412",
+            lastStatus: "عصب کشی دندان"
+        },
+        {
+            id: "user19",
+            userPhotoSrc: "/image/user.jpg",
+            name: "افاروق",
+            family: "کریمی",
+            visitDate: new Date().toLocaleDateString('fa-IR'),
+            visitTime: "20:30 - 18:30",
+            number: "09356897412",
+            lastStatus: "عصب کشی دندان"
+        },
+        {
+            id: "user20",
+            userPhotoSrc: "/image/user.jpg",
+            name: "روژمان",
+            family: "تاک",
+            visitDate: new Date().toLocaleDateString('fa-IR'),
+            visitTime: "20:30 - 18:30",
+            number: "09356897412",
+            lastStatus: "عصب کشی دندان"
+        },
+        {
+            id: "user21",
+            userPhotoSrc: "",
+            name: "سحر",
+            family: "مولایی",
+            visitDate: new Date().toLocaleDateString('fa-IR'),
+            visitTime: "20:30 - 18:30",
+            number: "09356897412",
+            lastStatus: "عصب کشی دندان"
+        },
+        {
+            id: "user22",
+            userPhotoSrc: "",
+            name: "افسانه",
+            family: "بایگانی",
+            visitDate: new Date().toLocaleDateString('fa-IR'),
+            visitTime: "20:30 - 18:30",
+            number: "09356897412",
+            lastStatus: "عصب کشی دندان"
+        },
+        {
+            id: "user23",
+            userPhotoSrc: "/image/user.jpg",
+            name: "بیستون",
+            family: "مرادی",
+            visitDate: new Date().toLocaleDateString('fa-IR'),
+            visitTime: "20:30 - 18:30",
+            number: "09356897412",
+            lastStatus: "عصب کشی دندان"
+        },
+
     ]
 }
+
+export function getInfoFromData(numRowForShow) {
+    let pageNumber = Math.floor(appointment.tBody.length / numRowForShow);
+    let remainRow = appointment.tBody.length % numRowForShow;
+    let btn = []
+    if (remainRow > 0) {
+        pageNumber++;
+    }
+    for (let index = 0; index < pageNumber; index++) {
+        btn.push(index + 1)
+
+    }
+    return btn;
+}
+export function getData(pageNumber, rowNumber) {
+    let data = [];
+    let start = (pageNumber * rowNumber) - rowNumber;
+
+
+    let end = pageNumber * rowNumber;
+    if (end > appointment.tBody.length) {
+        end = appointment.tBody.length;
+    }
+    for (let index = start; index < end; index++) {
+        data.push(appointment.tBody[index])
+
+    }
+
+    return data;
+}
+
