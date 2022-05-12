@@ -1,6 +1,6 @@
 function ButtonPagination({ buttons, onChangePage, setPage }) {
   return (
-    <div className="lg:pr-56 flex flex-row gap-2">
+    <div className="flex flex-row gap-2">
       {buttons.map((btn, index) => (
         <div
           key={index}

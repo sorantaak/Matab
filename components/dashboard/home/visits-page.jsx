@@ -28,9 +28,9 @@ function VisitsPage() {
     return <div className="">loading...</div>;
   }
   return (
-    <div className="container mx-auto w-11/12 ">
-      <h2 className="lg:pr-56 pt-5">{tableTitle}</h2>
-      <div className="h-[480px] lg:pr-56 overflow-y-auto">
+    <div className="container mx-auto w-11/12 lg:pr-56">
+      <h2 className="pt-5">{tableTitle}</h2>
+      <div className="">
         <Table
           tableTitle=""
           thData={thDatat}
