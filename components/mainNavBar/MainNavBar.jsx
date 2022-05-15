@@ -7,14 +7,30 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { SocialMedia } from "./../../data/SocialMediaData";
 import { TopNavBarContactData } from "../../data/TopNavbarContactData";
-import { route } from "next/dist/server/router";
 
-function MainNavBar() {
+function MainNavBar(props) {
+  // const t = useTranslations("mainnavbar");
   const router = useRouter();
+
   const { mail, phone } = TopNavBarContactData[0];
   const [showMenu, setShowMenu] = useState(false);
 
   const [scrolled, setScrolled] = useState(false);
+  const [isrRtl, setDir] = useState(true);
+
+  // console.log(t("menu"));
+  console.log(props);
+
+  const setDirectionToHomePage = () => {
+    router.push("/en");
+    setDir(!isrRtl);
+  };
+
+  useEffect(() => {
+    isrRtl
+      ? (document.body.style.direction = "rtl")
+      : (document.body.style.direction = "ltr");
+  }, [isrRtl]);
 
   const flexedNavbar =
     "flex flex-row container w-4/5 mx-auto justify-between py-4 transition transition-all duration-300";
@@ -104,7 +120,7 @@ function MainNavBar() {
             <div className="pt-3 text-center relative">
               <Image src="/image/logo.png" width={154} height={116} alt="img" />
               <ul className="flex flex-col text-right space-y-7 text-darkGold text-sm">
-                {NavbarData.map((item) => (
+                {props.messages.mainnavbar.menu.map((item) => (
                   <li
                     key={item.id}
                     className="flex py-2 px-2 cursor-pointer hover:bg-brightGold transition-all duration-200 hover:text-gray-800"
@@ -124,12 +140,9 @@ function MainNavBar() {
 
       {/* start navbar in desktoo */}
       <div>
-        <ul className="hidden sm:flex flex-row text-darkGold text-sm lg:text-lg">
-          {NavbarData.map((item) => (
-            <li
-              key={item.id}
-              className="pl-10 lg:pl-12 cursor-pointer hover:text-brightGold"
-            >
+        <ul className="hidden sm:flex flex-row gap-8 text-darkGold text-sm lg:text-lg">
+          {props.messages.mainnavbar.menu.map((item) => (
+            <li key={item.id} className="cursor-pointer hover:text-brightGold">
               <Link href={item.path}>
                 <a>{item.title}</a>
               </Link>
@@ -139,18 +152,23 @@ function MainNavBar() {
       </div>
       {/* end navbar in desktop */}
 
-      <div className="text-darkGold text-lg">
-        <span className="cursor-pointer hover:text-brightGold text-sm lg:text-lg">
-          <Link href="/signup">
-            <a>ثبت نام</a>
-          </Link>
-        </span>
-        {"/"}{" "}
-        <span className="cursor-pointer hover:text-brightGold text-sm lg:text-lg">
-          <Link href="/login">
-            <a>ورود</a>
-          </Link>
-        </span>
+      <div className="text-darkGold text-lg flex flex-row gap-3">
+        <div className="">
+          <span className="cursor-pointer hover:text-brightGold text-sm lg:text-lg">
+            <Link href="/signup">
+              <a>ثبت نام</a>
+            </Link>
+          </span>
+          {"/"}{" "}
+          <span className="cursor-pointer hover:text-brightGold text-sm lg:text-lg">
+            <Link href="/login">
+              <a>ورود</a>
+            </Link>
+          </span>
+        </div>
+        <div className="cursor-pointer" onClick={setDirectionToHomePage}>
+          EN
+        </div>
       </div>
     </div>
   );

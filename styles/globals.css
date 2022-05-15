@@ -31,8 +31,8 @@
   }
 }
 body {
-  direction: rtl;
   @apply font-vazir;
+  direction: rtl;
 }
 .fade-anim img {
   animation: fadeAnim 0.5s ease-out;

@@ -3,17 +3,20 @@ import '../styles/globals.css'
 import { motion, AnimatePresence } from 'framer-motion';
 import Dashboard from './dashboard';
 import DahsboardLayout from '../components/layout/dahsboardLayout';
+import { NextIntlProvider } from 'next-intl';
 
 function MyApp({ Component, pageProps, router }) {
   console.log(pageProps)
   if (router.pathname === '/news/[newsId]' || router.pathname === '/') {
     return (
-      < Layout key={router.route}>
-        <Component {...pageProps} />
-      </Layout >
-
+      <NextIntlProvider messages={pageProps.messages} >
+        <Layout key={router.route} messages={pageProps.messages}>
+          <Component {...pageProps} />
+        </Layout >
+      </NextIntlProvider>
     )
   }
+
   if (router.pathname === '/dashboard' || router.pathname === '/dashboard/visits') {
 
     return (
@@ -38,9 +41,7 @@ function MyApp({ Component, pageProps, router }) {
               },
             }
           }}>
-
             <Component {...pageProps} />
-
           </motion.div>
         </AnimatePresence>
       </DahsboardLayout>

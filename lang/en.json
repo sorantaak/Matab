@@ -1,0 +1,13 @@
+{
+  "home": {
+    "welcome": "welcome to nextjs"
+  },
+  "mainnavbar": {
+    "menu": [
+      { "id": 1, "title": "home", "path": "/" },
+      { "id": 2, "title": "news", "path": "/" },
+      { "id": 3, "title": "services", "path": "/" },
+      { "id": 4, "title": "Queuing system", "path": "/" }
+    ]
+  }
+}

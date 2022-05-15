@@ -3,7 +3,12 @@ import Header from '../components/Header'
 import CarsoulAndAboutOffice from '../components/Carsoul/CarsoulAndAboutOffice'
 import VideoSection from '../components/videos/VideoSection'
 import News from '../components/news/News'
-export default function Home() {
+import { useTranslations } from 'use-intl';
+
+export default function Home(props) {
+  // console.log(props.locale)
+  const t = useTranslations('home');
+
   return (
     <div>
       <Head>
@@ -17,4 +22,16 @@ export default function Home() {
       <News />
     </div>
   )
+}
+
+
+
+export function getStaticProps({ locale }) {
+
+  return {
+    props: {
+      messages: require(`../lang/${locale}.json`),
+      locale
+    },
+  };
 }

@@ -4,11 +4,12 @@ import MainNavBar from "../mainNavBar/MainNavBar";
 import TopNavbarContact from "../TopNavBar/TopNavbarContact";
 
 function Layout(props) {
+
   return (
     <Fragment>
       <header className="bg-header-img bg-left-top">
         <TopNavbarContact />
-        <MainNavBar />
+        <MainNavBar messages={props.messages} />
       </header>
       <main>{props.children}</main>
       <footer>
@@ -19,3 +20,4 @@ function Layout(props) {
 }
 
 export default Layout;
+
