@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 
 function SingleArticle() {
     const router = useRouter();
-    console.log(router, router.query)
+    // console.log(router, router.query)
     return (
         <div>SingleArticle
             <div>{router.query.title}</div>

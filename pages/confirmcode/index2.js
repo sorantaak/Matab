@@ -28,7 +28,7 @@ function Confirmcode() {
 
     const formSubmited = (e) => {
         e.preventDefault();
-        console.log('click enter')
+        // console.log('click enter')
 
         if (confirmCode.length === 6) {
 
@@ -39,7 +39,7 @@ function Confirmcode() {
             } else {
                 setClickedSubmitButton(true);
                 setTimeout(() => {
-                    console.log('click enter')
+                    // console.log('click enter')
                     router.push('/')
                 }, 2000)
             }

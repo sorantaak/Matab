@@ -9,7 +9,7 @@ function Layout(props) {
     <Fragment>
       <header className="bg-header-img bg-left-top">
         <TopNavbarContact />
-        <MainNavBar messages={props.messages} />
+        <MainNavBar />
       </header>
       <main>{props.children}</main>
       <footer>
@@ -20,4 +20,5 @@ function Layout(props) {
 }
 
 export default Layout;
+
 

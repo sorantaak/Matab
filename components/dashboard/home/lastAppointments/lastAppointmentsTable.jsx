@@ -16,7 +16,7 @@ function LastAppointmentsTable() {
     // setNumberRowForShow(rows);
   };
 
-  console.log(btn);
+  // console.log(btn);
   const tableTitle = lastAppointment.tableTitle;
   const thDatat = lastAppointment.thData;
   // const tBodyData = lastAppointment.tBody;

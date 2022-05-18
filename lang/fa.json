@@ -4,10 +4,28 @@
   },
   "mainnavbar": {
     "menu": [
-      { "id": 1, "title": "خانه", "path": "/" },
-      { "id": 2, "title": "اخبار", "path": "/" },
-      { "id": 3, "title": "سرویس ها", "path": "/" },
-      { "id": 4, "title": "سیستم نوبت دهی", "path": "/" }
+      { "id": 1, "title": "خانه", "path": "/", "icon": "{<BiIcons.BiHome />}" },
+      {
+        "id": 2,
+        "title": "اخبار",
+        "path": "/",
+        "icon": "{<BiIcons.BiHome />}"
+      },
+      {
+        "id": 3,
+        "title": "سرویس ها",
+        "path": "/",
+        "icon": "{<BiIcons.BiHome />}"
+      },
+      {
+        "id": 4,
+        "title": "سیستم نوبت دهی",
+        "path": "/",
+        "icon": "{<BiIcons.BiHome />"
+      }
     ]
+  },
+  "test": {
+    "key": "کلید"
   }
 }

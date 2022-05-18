@@ -13,7 +13,7 @@ function Confirmcode() {
     const [error, setError] = useState('')
     const router = useRouter()
     const testCode = "123456";
-    console.log(confirmCode);
+    // console.log(confirmCode);
     const remainingTimer = 10;
     // console.log(password);
     const getConfirmCode = (cCode) => {
@@ -23,7 +23,7 @@ function Confirmcode() {
 
     const formSubmited = (e) => {
         e.preventDefault();
-        console.log('click enter')
+        // console.log('click enter')
 
         if (confirmCode.length === 6) {
 
@@ -34,7 +34,7 @@ function Confirmcode() {
             } else {
                 setClickedSubmitButton(true);
                 setTimeout(() => {
-                    console.log('click enter')
+                    // console.log('click enter')
                     router.push('/')
                 }, 2000)
             }

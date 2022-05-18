@@ -1,28 +1,53 @@
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useTransition } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as RiIcons from "react-icons/ri";
+
 import { NavbarData } from "../../data/NavbarData";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { SocialMedia } from "./../../data/SocialMediaData";
 import { TopNavBarContactData } from "../../data/TopNavbarContactData";
+import { en, fa } from "../../translation";
 
 function MainNavBar(props) {
-  // const t = useTranslations("mainnavbar");
   const router = useRouter();
+  const { locale } = router;
 
+  const t = locale === "fa" ? fa : en;
+  // console.log(router.pathname);
+  console.log(router.asPath);
   const { mail, phone } = TopNavBarContactData[0];
   const [showMenu, setShowMenu] = useState(false);
 
   const [scrolled, setScrolled] = useState(false);
   const [isrRtl, setDir] = useState(true);
+  // const [lang , setLang] = useState()
 
   // console.log(t("menu"));
-  console.log(props);
+  // console.log(props.messages);
+  // console.log(props.locale);
 
-  const setDirectionToHomePage = () => {
-    router.push("/en");
+  const handleLanguageToggle = () => {
+    switch (locale) {
+      case "fa":
+        router.push(`/${router.asPath}`, `/${router.asPath}`, {
+          locale: "en",
+        });
+        break;
+      case "en":
+        router.push(`/${router.asPath}`, `/${router.asPath}`, {
+          locale: "fa",
+        });
+        break;
+    }
+    if (router.locale === "fa") {
+    } else if (router.locale === "en") {
+      router.push(`/en/${router.asPath}`, `/fa/${router.asPath}`, {
+        locale: "fa",
+      });
+    }
+
     setDir(!isrRtl);
   };
 
@@ -30,7 +55,7 @@ function MainNavBar(props) {
     isrRtl
       ? (document.body.style.direction = "rtl")
       : (document.body.style.direction = "ltr");
-  }, [isrRtl]);
+  }, [isrRtl, router.locale]);
 
   const flexedNavbar =
     "flex flex-row container w-4/5 mx-auto justify-between py-4 transition transition-all duration-300";
@@ -56,7 +81,7 @@ function MainNavBar(props) {
     }
   };
   const handleResizeWindow = () => {
-    console.log(window.innerWidth);
+    // console.log(window.innerWidth);
     if (window.innerWidth > 639) {
       setShowMenu(false);
     }
@@ -120,7 +145,7 @@ function MainNavBar(props) {
             <div className="pt-3 text-center relative">
               <Image src="/image/logo.png" width={154} height={116} alt="img" />
               <ul className="flex flex-col text-right space-y-7 text-darkGold text-sm">
-                {props.messages.mainnavbar.menu.map((item) => (
+                {t.mainnavbar.menu.map((item) => (
                   <li
                     key={item.id}
                     className="flex py-2 px-2 cursor-pointer hover:bg-brightGold transition-all duration-200 hover:text-gray-800"
@@ -141,7 +166,7 @@ function MainNavBar(props) {
       {/* start navbar in desktoo */}
       <div>
         <ul className="hidden sm:flex flex-row gap-8 text-darkGold text-sm lg:text-lg">
-          {props.messages.mainnavbar.menu.map((item) => (
+          {t.mainnavbar.menu.map((item) => (
             <li key={item.id} className="cursor-pointer hover:text-brightGold">
               <Link href={item.path}>
                 <a>{item.title}</a>
@@ -153,6 +178,9 @@ function MainNavBar(props) {
       {/* end navbar in desktop */}
 
       <div className="text-darkGold text-lg flex flex-row gap-3">
+        <div className="cursor-pointer" onClick={handleLanguageToggle}>
+          {locale === "fa" ? "En" : "Fa"}
+        </div>
         <div className="">
           <span className="cursor-pointer hover:text-brightGold text-sm lg:text-lg">
             <Link href="/signup">
@@ -165,9 +193,6 @@ function MainNavBar(props) {
               <a>ورود</a>
             </Link>
           </span>
-        </div>
-        <div className="cursor-pointer" onClick={setDirectionToHomePage}>
-          EN
         </div>
       </div>
     </div>

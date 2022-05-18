@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SocialMedia } from "./../../../data/SocialMediaData";
 function TopNavBarLeftSide() {
-  console.log(SocialMedia);
+  // console.log(SocialMedia);
   return (
     <div>
       <ul className="flex">

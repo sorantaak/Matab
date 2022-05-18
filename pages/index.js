@@ -3,11 +3,25 @@ import Header from '../components/Header'
 import CarsoulAndAboutOffice from '../components/Carsoul/CarsoulAndAboutOffice'
 import VideoSection from '../components/videos/VideoSection'
 import News from '../components/news/News'
-import { useTranslations } from 'use-intl';
+// import { useTranslations } from 'use-intl';
+import { useEffect } from 'react'
 
-export default function Home(props) {
+export default function Home() {
   // console.log(props.locale)
-  const t = useTranslations('home');
+  // const t = useTranslations('mainnavbar');
+  // console.log(t('menu'));
+  // useEffect(() => {
+  //   if (props.locale === 'fa') {
+  //     document.body.style.direction = "rtl";
+  //     document.body.style.fontFamily = "Vazirmatn"
+  //   } else {
+  //     document.body.style.direction = "ltr";
+  //     document.body.style.fontFamily = "Tahoma"
+  //   }
+  //   props.locale === 'fa'
+  //     ? (document.body.style.direction = "rtl")
+  //     : (document.body.style.direction = "ltr");
+  // }, [props.locale])
 
   return (
     <div>

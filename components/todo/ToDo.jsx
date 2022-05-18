@@ -5,7 +5,7 @@ function ToDo() {
   const [svgWidth, setWidthSvg] = useState(220);
   const [svgHeight, setHeightSvg] = useState(205);
   const handleResizeWindow = () => {
-    console.log(window.innerWidth);
+    // console.log(window.innerWidth);
     if (window.innerWidth < 1024 && window.innerWidth >= 639) {
       // setShowMenu(false);
       setWidthSvg(100);

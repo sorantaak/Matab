@@ -20,7 +20,7 @@ function VisitsPage() {
     // setNumberRowForShow(rows);
   };
 
-  console.log(btn);
+  // console.log(btn);
   const tableTitle = appointment.tableTitle;
   const thDatat = appointment.thData;
   // const tBodyData = appointment.tBody;

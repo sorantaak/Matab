@@ -7,11 +7,14 @@ import Image from 'next/image';
 import Head from 'next/head';
 import * as BiIcons from "react-icons/bi";
 
+
 function News(props) {
     const news = props.loadNews;
     const router = useRouter();
+    // const t = useTranslations('mainnavbar');
+    // console.log(t('menu'));
     // const news = getNewsById(router.query.newsId)
-    console.log(news)
+    // console.log(news)
     if (!news) {
         return (<p>loading...</p>)
     }
@@ -45,16 +48,22 @@ function News(props) {
 
 export default News
 
-export async function getStaticProps(context) {
-    const { params } = context;
-    console.log(params.newsId)
+export async function getStaticProps({ params, locale }) {
+    // const { params } = context;
+    console.log(locale);
+
     const news = await getNewsById(params.newsId);
-    console.log(news)
+    console.log(`../../lang/${locale}.json`)
     if (!news) {
         return { notFound: true } //return 404 page when product is empty
     }
     return {
-        props: { loadNews: news }
+        props: {
+            loadNews: news,
+            // test: "aaaaaaa",
+            messages: require(`../../lang/${locale}.json`),
+            locale
+        }
     }
 }
 
@@ -62,7 +71,7 @@ export async function getStaticPaths() {
     const data = newsData;
     const ids = data.map(item => item.id);
     const pathsWithParams = ids.map((id) => ({ params: { newsId: id } }));
-    console.log(pathsWithParams);
+    // console.log(pathsWithParams);
     return {
         paths: pathsWithParams,
         // [
@@ -75,3 +84,4 @@ export async function getStaticPaths() {
         fallback: true
     }
 }
+
