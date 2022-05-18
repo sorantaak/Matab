@@ -24,9 +24,6 @@ function MenuItme(props) {
     } else {
       setClassForLink("text-sm transition-all text-sidebarMenu");
     }
-    return {
-      router,
-    };
   }, [router]);
   return (
     <li

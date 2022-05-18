@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState, useEffect, useTransition } from "react";
+import { useState, useEffect } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as RiIcons from "react-icons/ri";
 
@@ -15,47 +15,50 @@ function MainNavBar(props) {
   const { locale } = router;
 
   const t = locale === "fa" ? fa : en;
-  // console.log(router.pathname);
+
   console.log(router.asPath);
   const { mail, phone } = TopNavBarContactData[0];
   const [showMenu, setShowMenu] = useState(false);
 
   const [scrolled, setScrolled] = useState(false);
-  const [isrRtl, setDir] = useState(true);
+  const [isRtl, setDir] = useState(true);
   // const [lang , setLang] = useState()
 
   // console.log(t("menu"));
   // console.log(props.messages);
-  // console.log(props.locale);
+  console.log(router.pathname);
 
   const handleLanguageToggle = () => {
     switch (locale) {
       case "fa":
-        router.push(`/${router.asPath}`, `/${router.asPath}`, {
+        router.push(router.asPath, router.asPath, {
           locale: "en",
         });
         break;
       case "en":
-        router.push(`/${router.asPath}`, `/${router.asPath}`, {
+        router.push(router.asPath, router.asPath, {
           locale: "fa",
         });
         break;
     }
-    if (router.locale === "fa") {
-    } else if (router.locale === "en") {
-      router.push(`/en/${router.asPath}`, `/fa/${router.asPath}`, {
-        locale: "fa",
-      });
-    }
 
-    setDir(!isrRtl);
+    setDir(!isRtl);
   };
 
   useEffect(() => {
-    isrRtl
-      ? (document.body.style.direction = "rtl")
-      : (document.body.style.direction = "ltr");
-  }, [isrRtl, router.locale]);
+    if (isRtl) {
+      document.body.style.direction = "rtl";
+      document.body.style.removeProperty("font-family");
+    } else {
+      document.body.style.direction = "ltr";
+      document.body.style.fontFamily = "Tahoma";
+    }
+
+    console.log("test");
+    // isRtl
+    //   ? (document.body.style.direction = "rtl")
+    //   : (document.body.style.direction = "ltr");
+  }, [isRtl]);
 
   const flexedNavbar =
     "flex flex-row container w-4/5 mx-auto justify-between py-4 transition transition-all duration-300";

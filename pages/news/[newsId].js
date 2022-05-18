@@ -61,8 +61,7 @@ export async function getStaticProps({ params, locale }) {
         props: {
             loadNews: news,
             // test: "aaaaaaa",
-            messages: require(`../../lang/${locale}.json`),
-            locale
+
         }
     }
 }

@@ -40,12 +40,3 @@ export default function Home() {
 
 
 
-export function getStaticProps({ locale }) {
-
-  return {
-    props: {
-      messages: require(`../lang/${locale}.json`),
-      locale
-    },
-  };
-}
