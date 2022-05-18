@@ -34,30 +34,27 @@ function MainNavBar(props) {
         router.push(router.asPath, router.asPath, {
           locale: "en",
         });
+        setDir(false);
         break;
       case "en":
         router.push(router.asPath, router.asPath, {
           locale: "fa",
         });
+        setDir(true);
         break;
     }
-
-    setDir(!isRtl);
   };
 
   useEffect(() => {
     if (isRtl) {
+      document.body.dir = "rtl";
       document.body.style.direction = "rtl";
       document.body.style.removeProperty("font-family");
     } else {
+      document.body.dir = "ltr";
       document.body.style.direction = "ltr";
       document.body.style.fontFamily = "Tahoma";
     }
-
-    console.log("test");
-    // isRtl
-    //   ? (document.body.style.direction = "rtl")
-    //   : (document.body.style.direction = "ltr");
   }, [isRtl]);
 
   const flexedNavbar =
