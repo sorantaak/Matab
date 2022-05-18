@@ -46,16 +46,16 @@ function MainNavBar(props) {
   };
 
   useEffect(() => {
-    if (isRtl) {
+    if (locale === "fa") {
       document.body.dir = "rtl";
       document.body.style.direction = "rtl";
       document.body.style.removeProperty("font-family");
-    } else {
+    } else if (locale === "en") {
       document.body.dir = "ltr";
       document.body.style.direction = "ltr";
       document.body.style.fontFamily = "Tahoma";
     }
-  }, [isRtl]);
+  }, [locale]);
 
   const flexedNavbar =
     "flex flex-row container w-4/5 mx-auto justify-between py-4 transition transition-all duration-300";

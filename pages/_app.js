@@ -6,10 +6,7 @@ import DahsboardLayout from '../components/layout/dahsboardLayout';
 
 
 function MyApp({ Component, pageProps, router }) {
-  // console.log(pageProps)
-  // console.log(router.pathname);
-  // console.log(router.locale);
-  if (router.pathname === '/news/[newsId]' || router.pathname === '/en/news/[newsId]' || router.pathname === '/fa/news/[newsId]' || router.pathname === '/') {
+  if (router.pathname === '/news/[newsId]' || router.pathname === '/') {
     return (
 
       <Layout>
