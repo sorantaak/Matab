@@ -4,7 +4,7 @@ export const en = {
     mainnavbar: {
         menu: [
             { id: 1, title: "Home", path: "/", icon: <BiIcons.BiHome /> },
-            { id: 2, title: "News", path: "/", icon: <BiIcons.BiNews /> },
+            { id: 2, title: "News", path: "/login", icon: <BiIcons.BiNews /> },
             {
                 id: 3,
                 title: "Services",
@@ -25,7 +25,7 @@ export const fa = {
     mainnavbar: {
         menu: [
             { id: 1, title: "خانه", path: "/", icon: <BiIcons.BiHome /> },
-            { id: 2, title: "اخبار", path: "/", icon: <BiIcons.BiNews /> },
+            { id: 2, title: "اخبار", path: "/login", icon: <BiIcons.BiNews /> },
             {
                 id: 3,
                 title: "سرویسها",

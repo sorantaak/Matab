@@ -80,6 +80,12 @@ function MainNavBar(props) {
       setShowMenu(false);
     }
   };
+  const handleMenuItem = (path) => {
+    if (showMenu) {
+      setShowMenu(false);
+    }
+    router.push(path);
+  };
   const handleScroll = () => {
     let offset = window.scrollY;
     // console.log(offset);
@@ -157,11 +163,10 @@ function MainNavBar(props) {
                   <li
                     key={item.id}
                     className="flex gap-2 py-2 px-2 cursor-pointer hover:bg-brightGold transition-all duration-200 hover:text-gray-800"
+                    onClick={() => handleMenuItem(item.path)}
                   >
-                    <i className="ml-2 text-lg">{item.icon}</i>
-                    <Link href={item.path}>
-                      <a>{item.title}</a>
-                    </Link>
+                    <i className="ltr:ml-2 rtl:mr-2 text-lg">{item.icon}</i>
+                    <a>{item.title}</a>
                   </li>
                 ))}
               </ul>
