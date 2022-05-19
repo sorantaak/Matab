@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as RiIcons from "react-icons/ri";
 import Image from "next/image";
@@ -11,7 +11,7 @@ import { en, fa } from "../../translation";
 function MainNavBar(props) {
   const router = useRouter();
   const { locale } = router;
-
+  const ref = useRef();
   const t = locale === "fa" ? fa : en;
 
   console.log(router.asPath);
@@ -53,7 +53,12 @@ function MainNavBar(props) {
       document.body.style.direction = "ltr";
       document.body.style.fontFamily = "Tahoma";
     }
-  }, [locale]);
+    if (showMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [locale, showMenu]);
 
   const flexedNavbar =
     "flex flex-row container w-4/5 mx-auto justify-between py-4 transition transition-all duration-300";
@@ -69,6 +74,12 @@ function MainNavBar(props) {
     "w-0 h-0 bg-black fixed top-0 bottom-0 z-20 opacity-100 transition-all duration-300 -right-96 ltr:-left-96";
   const showNavbarside =
     "w-2/3 h-full bg-black fixed top-0 bottom-0 z-20 opacity-100 transition-all duration-300 right-0 ltr:left-0";
+
+  const handleBackOverlay = (e) => {
+    if (ref.current === e.target) {
+      setShowMenu(false);
+    }
+  };
   const handleScroll = () => {
     let offset = window.scrollY;
     // console.log(offset);
@@ -108,10 +119,9 @@ function MainNavBar(props) {
 
       {/*start navar in mobile */}
       <div
+        ref={ref}
         className={showMenu ? backShowNavbarside : backhiddenNavbarSide}
-        // onClick={() => {
-        //   setShowMenu(false);
-        // }}
+        onClick={handleBackOverlay}
       >
         <div className={showMenu ? showNavbarside : hiddeNabarSide}>
           <div className="absolute bottom-0 h-20 text-center z-50 w-full">
