@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as RiIcons from "react-icons/ri";
+import * as MdIcons from "react-icons/md";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { SocialMedia } from "./../../data/SocialMediaData";
@@ -113,7 +114,7 @@ function MainNavBar(props) {
   return (
     <div className={scrolled ? fixedNabar : flexedNavbar}>
       {/* start hamberger icon button in mobile */}
-      <div className="flex sm:hidden">
+      <div className="flex md:hidden">
         <div>
           <FaIcons.FaBars
             onClick={() => setShowMenu(true)}
@@ -158,7 +159,7 @@ function MainNavBar(props) {
             />
             <div className="pt-3 text-center relative">
               <Image src="/image/logo.png" width={154} height={116} alt="img" />
-              <ul className="flex flex-col text-right space-y-7 text-darkGold text-sm">
+              <ul className="flex flex-col text-right space-y-3 text-darkGold text-sm">
                 {t.mainnavbar.menu.map((item) => (
                   <li
                     key={item.id}
@@ -178,7 +179,7 @@ function MainNavBar(props) {
 
       {/* start navbar in desktop */}
       <div>
-        <ul className="hidden sm:flex flex-row gap-6 text-darkGold text-sm lg:text-lg">
+        <ul className="hidden md:flex flex-row gap-4  text-darkGold text-sm lg:text-lg">
           {t.mainnavbar.menu.map((item) => (
             <li key={item.id} className="cursor-pointer hover:text-brightGold">
               <Link href={item.path}>
@@ -191,20 +192,26 @@ function MainNavBar(props) {
       {/* end navbar in desktop */}
 
       <div className="text-darkGold text-lg flex flex-row gap-3">
-        <div className="cursor-pointer" onClick={handleLanguageToggle}>
-          {locale === "fa" ? "En" : "Fa"}
+        <div
+          className="cursor-pointer flex flex-row ltr:flex-row-reverse items-center justify-center bg-darkGold rounded-md text-white px-1 gap-1"
+          onClick={handleLanguageToggle}
+        >
+          <span
+            className="rtl:pt-1 ltr:pb-1 font-thin"
+            title={locale === "fa" ? "English" : "فارسی"}
+          >
+            {locale === "fa" ? "En" : "Fa"}
+          </span>
+
+          <MdIcons.MdOutlineLanguage />
         </div>
         <div className="">
           <span className="cursor-pointer hover:text-brightGold text-sm lg:text-lg">
-            <Link href="/signup">
-              <a>ثبت نام</a>
-            </Link>
+            <Link href="/signup">{t.auto.singUp}</Link>
           </span>
           {"/"}{" "}
           <span className="cursor-pointer hover:text-brightGold text-sm lg:text-lg">
-            <Link href="/login">
-              <a>ورود</a>
-            </Link>
+            <Link href="/login">{t.auto.login}</Link>
           </span>
         </div>
       </div>

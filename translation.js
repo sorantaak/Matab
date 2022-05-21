@@ -1,6 +1,12 @@
 import * as BiIcons from "react-icons/bi";
+import * as BsIcons from "react-icons/bs";
 import * as MdIcons from "react-icons/md";
+import * as TiIcons from "react-icons/ti";
 export const en = {
+    auto: {
+        login: "login",
+        singUp: "sign up"
+    },
     mainnavbar: {
         menu: [
             { id: 1, title: "Home", path: "/", icon: <BiIcons.BiHome /> },
@@ -21,19 +27,19 @@ export const en = {
                 id: 5,
                 title: "About Us",
                 path: "/about-us",
-                icon: <BiIcons.BiSticker />
+                icon: <BsIcons.BsInfoCircle />
             },
             {
                 id: 6,
                 title: "Contact Us",
                 path: "/contact-us",
-                icon: <BiIcons.BiSticker />
+                icon: <TiIcons.TiContacts />
             }
         ]
     },
     footer: {
-        mapsite: {
-            title: "mapsite",
+        sitemap: {
+            title: "Sitemap",
             copyright: "All material and intellectual rights are reserved for Dr. Salam Rahimi's dentistry",
         },
         address: {
@@ -52,6 +58,10 @@ export const en = {
 }
 
 export const fa = {
+    auto: {
+        login: "ورود",
+        singUp: "ثبت نام"
+    },
     mainnavbar: {
         menu: [
             { id: 1, title: "خانه", path: "/", icon: <BiIcons.BiHome /> },
@@ -72,18 +82,18 @@ export const fa = {
                 id: 5,
                 title: "درباره ما",
                 path: "/about-us",
-                icon: <BiIcons.BiSticker />
+                icon: <BsIcons.BsInfoCircle />
             },
             {
                 id: 6,
                 title: "تماس با ما",
                 path: "/contact-us",
-                icon: <BiIcons.BiSticker />
+                icon: <TiIcons.TiContacts />
             }
         ]
     },
     footer: {
-        mapsite: {
+        sitemap: {
             title: "نقشه سایت",
             copyright: "کلیه حقوق مادی و معنوی برای دندانپزشکی دکتر سلام رحیمی محفوظ است",
         },

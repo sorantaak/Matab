@@ -39,10 +39,10 @@ function ToDoLits() {
         },
       }}
     >
-      <div className="grid grid-cols-1 grid-rows-1 lg:grid-cols-3 gap-3 mb-5">
+      <div className="grid grid-cols-1  lg:grid-cols-3 gap-3 mb-5">
         {myJob.map((jobItem) => (
           <div key={jobItem.id}>
-            <div className="flex flex-row w-full lg:max-w-[400px] bg-black/50 place-items-center p-4">
+            <div className="flex flex-row w-full bg-black/50 justify-center items-center p-4">
               <div className="basis-1/4 text-center rtl:pl-2 ltr:pr-2">
                 <Image
                   className=""
