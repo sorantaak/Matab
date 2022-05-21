@@ -178,7 +178,7 @@ function MainNavBar(props) {
 
       {/* start navbar in desktop */}
       <div>
-        <ul className="hidden sm:flex flex-row gap-8 text-darkGold text-sm lg:text-lg">
+        <ul className="hidden sm:flex flex-row gap-6 text-darkGold text-sm lg:text-lg">
           {t.mainnavbar.menu.map((item) => (
             <li key={item.id} className="cursor-pointer hover:text-brightGold">
               <Link href={item.path}>

@@ -19,7 +19,7 @@ function LogoMatab() {
         },
       }}
     >
-      <div className="text-center lg:text-right mt-5 lg:mt-5">
+      <div className="text-center rtl:lg:text-right ltr:lg:text-left mt-5 lg:mt-5">
         <Image src="/image/logo.png" width={200} height={151} alt="img" />
       </div>
     </motion.div>

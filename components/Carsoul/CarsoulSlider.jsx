@@ -66,17 +66,17 @@ function CarsoulSlider() {
       </div>
       <div className="absolute w-full top-1/2 transform -translate-y-1/2  flex justify-between">
         <button
-          className="bg-black/5 hover:bg-black/10 transition-all py-5 md:py-10 pl-2 md:pl-5 rounded-l-full"
+          className="flex w-16 h-28 items-center justify-start bg-black/5 hover:bg-black/10 transition-all rtl:rounded-l-full ltr:rounded-r-full"
           onClick={handleOndePreviose}
         >
-          <IoIcons.IoIosArrowForward className="text-5xl text-brightGold pr-0" />
+          <IoIcons.IoIosArrowForward className="text-5xl text-brightGold pr-0 ltr:rotate-180" />
         </button>
         <button
-          className="bg-black/5 hover:bg-black/10 transition-all py-2 md:py-10 pr-2 md:pr-5 rounded-r-full"
+          className="flex w-16 h-28 items-center justify-end bg-black/5 hover:bg-black/10 transition-all rtl:rounded-r-full ltr:rounded-l-full"
           onClick={handleOneNext}
         >
           <span>
-            <IoIcons.IoIosArrowBack className="text-5xl text-brightGold pr-15" />
+            <IoIcons.IoIosArrowBack className="text-5xl text-brightGold pr-15 ltr:rotate-180" />
           </span>
         </button>
       </div>

@@ -18,7 +18,7 @@ function OurMotto({ title, subTitle }) {
         },
       }}
     >
-      <div className="text-brightGold lg:text-right sm:pt-0 text-center">
+      <div className="text-brightGold rtl:lg:text-right ltr:lg:text-left sm:pt-0 text-center">
         <h1 className="text-2xl lg:text-xl">{title}</h1>
         <h2 className="text-3xl font-bold leading-loose">{subTitle}</h2>
       </div>

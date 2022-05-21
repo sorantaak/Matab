@@ -6,7 +6,7 @@ function CarsoulAndAboutOffice() {
       <div className="flex md:flex-row flex-col pt-10 md:items-center">
         <div className="flex-1">
           <h2 className="text-4xl">درباره مطب</h2>
-          <p className="text-justify pt-1 pl-4 text-sm lg:text-md mb-2 md:mb-0">
+          <p className="text-justify pt-1 rlt:pl-4 ltr:pr-4 text-sm lg:text-md mb-2 md:mb-0">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
             استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
             ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و

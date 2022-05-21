@@ -43,7 +43,7 @@ function ToDoLits() {
         {myJob.map((jobItem) => (
           <div key={jobItem.id}>
             <div className="flex flex-row w-full lg:max-w-[400px] bg-black/50 place-items-center p-4">
-              <div className="basis-1/4 text-center pl-2">
+              <div className="basis-1/4 text-center rtl:pl-2 ltr:pr-2">
                 <Image
                   className=""
                   src={jobItem.iconSrc}
