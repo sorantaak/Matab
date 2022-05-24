@@ -27,8 +27,10 @@ function News(props) {
             </Head>
             <Row bgColor="bg-gray-50">
                 <div className='pt-10 shadow-lg bg-white rounded-lg px-5 py-5'>
-                    <div className='flex flex-row justify-between'>
-                        <div><h2 className='mb-5 font-bold text-gray-600'>{news.title}</h2></div>
+                    <div className='flex rtl:flex-row ltr:flex-row-reverse justify-between'>
+                        <div>
+                            <h2 className='mb-5 font-bold text-gray-600'>{news.title}</h2>
+                        </div>
                         <div className='text-gray-400 text-2xl'><BiIcons.BiArrowBack
                             className="cursor-pointer"
                             onClick={() => router.push('/#news')}

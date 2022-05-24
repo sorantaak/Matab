@@ -27,17 +27,17 @@ function InputMobile(props) {
     switch (check) {
       case 0:
         setClasses(
-          "w-full border-2 border-gray-500 rounded-md px-3 h-12 text-center placeholder:text-center  outline-offset-4 outline-brightGold  focus:outline-1 transition-all"
+          "text-sm w-full border-2 border-gray-500 rounded-md px-3 h-12 text-center placeholder:text-center  outline-offset-4 outline-brightGold  focus:outline-1 transition-all"
         );
         break;
       case 1:
         setClasses(
-          "w-full border-2 border-green-500 rounded-md px-3 h-12 focus:outline-0 transition-all text-center placeholder:text-center"
+          "text-sm w-full border-2 border-green-500 rounded-md px-3 h-12 focus:outline-0 transition-all text-center placeholder:text-center"
         );
         break;
       case 2:
         setClasses(
-          "w-full border-2 border-red-500 rounded-md px-3 h-12 focus:outline-0 transition-all text-center placeholder:text-center"
+          "text-sm w-full border-2 border-red-500 rounded-md px-3 h-12 focus:outline-0 transition-all text-center placeholder:text-center"
         );
         break;
     }

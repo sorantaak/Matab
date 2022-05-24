@@ -14,52 +14,34 @@ function MainNavBar(props) {
   const { locale } = router;
   const ref = useRef();
   const t = locale === "fa" ? fa : en;
-
   console.log(router.asPath);
   const { mail, phone } = TopNavBarContactData[0];
   const [showMenu, setShowMenu] = useState(false);
-
   const [scrolled, setScrolled] = useState(false);
-  const [isRtl, setDir] = useState(true);
-  // const [lang , setLang] = useState()
-
-  // console.log(t("menu"));
-  // console.log(props.messages);
-  console.log(router.pathname);
-
   const handleLanguageToggle = () => {
     switch (locale) {
       case "fa":
         router.push(router.asPath, router.asPath, {
           locale: "en",
         });
-        setDir(false);
+
         break;
       case "en":
         router.push(router.asPath, router.asPath, {
           locale: "fa",
         });
-        setDir(true);
+
         break;
     }
   };
 
   useEffect(() => {
-    if (locale === "fa") {
-      document.body.dir = "rtl";
-      document.body.style.direction = "rtl";
-      document.body.style.removeProperty("font-family");
-    } else if (locale === "en") {
-      document.body.dir = "ltr";
-      document.body.style.direction = "ltr";
-      document.body.style.fontFamily = "Tahoma";
-    }
     if (showMenu) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
-  }, [locale, showMenu]);
+  }, [showMenu]);
 
   const flexedNavbar =
     "flex flex-row container w-4/5 mx-auto justify-between py-4 transition transition-all duration-300";

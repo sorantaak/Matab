@@ -3,10 +3,30 @@ import '../styles/globals.css'
 import { motion, AnimatePresence } from 'framer-motion';
 import Dashboard from './dashboard';
 import DahsboardLayout from '../components/layout/dahsboardLayout';
+import { useEffect } from 'react';
 
 
 function MyApp({ Component, pageProps, router }) {
-  if (router.pathname === '/news/[newsId]' || router.pathname === '/') {
+
+  const { locale } = router;
+  console.log(router.pathname);
+  useEffect(() => {
+
+    if (!router.pathname.includes('dashboard')) {
+      if (locale === "fa") {
+        document.body.dir = "rtl";
+        document.body.style.direction = "rtl";
+        document.body.style.removeProperty("font-family");
+      } else if (locale === "en") {
+        document.body.dir = "ltr";
+        document.body.style.direction = "ltr";
+        document.body.style.fontFamily = "Tahoma";
+      }
+    }
+
+
+  }, [locale]);
+  if (router.pathname === '/news/[newsId]' || router.pathname === '/' || router.pathname === '/404') {
     return (
 
       <Layout>
@@ -16,7 +36,7 @@ function MyApp({ Component, pageProps, router }) {
     )
   }
 
-  if (router.pathname === '/dashboard' || router.pathname === '/dashboard/visits') {
+  if (router.pathname.includes('dashboard')) {
 
     return (
       <DahsboardLayout>
