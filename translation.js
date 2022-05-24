@@ -54,8 +54,15 @@ export const en = {
             number_title: "Offical Phone",
             number: "0444 224 8888"
         }
+    },
+    ourmMoto: {
+        title: 'Our priority',
+        subTitle: 'Your beautiful smile'
     }
 }
+
+
+
 
 export const fa = {
     auto: {
@@ -109,5 +116,9 @@ export const fa = {
             number_title: "شماره مطب",
             number: "0444 224 8888"
         }
+    },
+    ourmMoto: {
+        title: 'اولویت',
+        subTitle: 'لبخند زیبای شماست'
     }
 }

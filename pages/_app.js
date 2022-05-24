@@ -1,7 +1,6 @@
 import Layout from '../components/layout/layout'
 import '../styles/globals.css'
 import { motion, AnimatePresence } from 'framer-motion';
-import Dashboard from './dashboard';
 import DahsboardLayout from '../components/layout/dahsboardLayout';
 import { useEffect } from 'react';
 
@@ -26,6 +25,7 @@ function MyApp({ Component, pageProps, router }) {
 
 
   }, [locale]);
+
   if (router.pathname === '/news/[newsId]' || router.pathname === '/' || router.pathname === '/404') {
     return (
 
@@ -37,7 +37,6 @@ function MyApp({ Component, pageProps, router }) {
   }
 
   if (router.pathname.includes('dashboard')) {
-
     return (
       <DahsboardLayout>
         <AnimatePresence>
