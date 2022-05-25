@@ -6,6 +6,7 @@ import SubmitButton from "../../components/LoginAndRegistrationSteps/submitButto
 import { formData } from "../../data/formData";
 import Head from "next/head";
 import PageFormUi from "../../components/ui/EnterWebsiteUi/PageFormUi";
+import { en, fa } from '../../translation';
 
 
 
@@ -15,6 +16,8 @@ function Signup() {
     const [isClickedSubmitButton, setClickedSubmitButton] = useState(false);
     const [error, setError] = useState('')
     const router = useRouter()
+    const { locale } = router;
+    const t = locale === "fa" ? fa : en;
     console.log(phoneNumber);
     // console.log(password);
     const getMobileNumber = (mobileNumber) => {
@@ -41,7 +44,7 @@ function Signup() {
     return (
         <>
             <Head>
-                <title>ثبت نام</title>
+                <title>{t.pages.singUp.title}</title>
                 <link rel="icon" href="/logo.ico" />
             </Head>
             <PageFormUi

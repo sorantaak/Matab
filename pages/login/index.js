@@ -5,6 +5,8 @@ import InputPassword from "../../components/LoginAndRegistrationSteps/inputPassw
 import SubmitButton from "../../components/LoginAndRegistrationSteps/submitButton";
 import { formData } from "../../data/formData";
 import PageFormUi from "../../components/ui/EnterWebsiteUi/PageFormUi";
+import { en, fa } from '../../translation';
+import Head from "next/head";
 
 
 function Login() {
@@ -12,7 +14,9 @@ function Login() {
     const [password, setPassword] = useState('');
     const [isClickedSubmitButton, setClickedSubmitButton] = useState(false);
     const [error, setError] = useState('')
-    const router = useRouter()
+    const router = useRouter();
+    const { locale } = router;
+    const t = locale === "fa" ? fa : en;
     console.log(phoneNumber);
     console.log(password);
     const getMobileNumber = (mobileNumber) => {
@@ -34,30 +38,36 @@ function Login() {
             }, 2000)
 
         } else {
-            setError(formData.fillFormError)
+            setError(t.formData.fillFormError)
         }
     }
 
 
     return (
-        <PageFormUi
-            showRegisterLink={true}
-            showForgetLink={true}
-            linkFeatures="/signup"
-            linkTitle="ثبت نام نکرده ام"
-            srcImage="/Image/logo.png"
-            error={error}
-            backArrowButtonHandlle={() => router.push('/')}
-            pageTitle="ورود به پنل کاربری"
-        >
-            <InputMobile getMobile={getMobileNumber} />
-            <InputPassword
-                label={formData.passwordLabel}
-                placeholder={formData.passwordPalceHolder}
-                getPassword={getPassword}
-            />
-            <SubmitButton titleBtn="ورود" titleProcess="در حال ورود" isClicked={isClickedSubmitButton} onSubmitForm={formSubmited} />
-        </PageFormUi>
+        <>
+            <Head>
+                <title>{t.pages.logIn.title}</title>
+                <link rel="icon" href="/logo.ico" />
+            </Head>
+            <PageFormUi
+                showRegisterLink={true}
+                showForgetLink={true}
+                linkFeatures="/signup"
+                linkTitle="ثبت نام نکرده ام"
+                srcImage="/Image/logo.png"
+                error={error}
+                backArrowButtonHandlle={() => router.push('/')}
+                pageTitle={t.pages.logIn.title}
+            >
+                <InputMobile getMobile={getMobileNumber} />
+                <InputPassword
+                    label={t.formData.passwordLabel}
+                    placeholder={t.formData.passwordPalceHolder}
+                    getPassword={getPassword}
+                />
+                <SubmitButton titleBtn={t.pages.logIn.titleBtn} titleProcess={t.pages.logIn.btnTitleProcess} isClicked={isClickedSubmitButton} onSubmitForm={formSubmited} />
+            </PageFormUi>
+        </>
     )
 }
 

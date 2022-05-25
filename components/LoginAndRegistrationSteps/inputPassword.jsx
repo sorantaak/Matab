@@ -1,10 +1,15 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { useState, useEffect } from "react";
 import * as RiIcons from "react-icons/ri";
+import { en, fa } from "../../translation";
 
 function InputPassword(props) {
   const [check, setCheck] = useState(0);
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === "fa" ? fa : en;
   const [inputClasses, setClasses] = useState(
     "w-full border-2 border-gray-500 rounded-md px-3 h-12 focus:outline-0 transition-all"
   );
@@ -41,8 +46,11 @@ function InputPassword(props) {
   return (
     <div className="mt-4">
       <div>
-        <label className="select-none" htmlFor="pass">
-          {props.label}
+        <label
+          className={`select-none ${locale === "en" && "capitalize"}`}
+          htmlFor="pass"
+        >
+          {t.formData.passwordLabel}
         </label>
       </div>
       <div className="w-full mt-2 relative" dir="ltr">
@@ -52,11 +60,11 @@ function InputPassword(props) {
           onChange={checkPasswordHandller}
           onBlur={() => {}}
           type={showPassword ? "text" : "password"}
-          className={inputClasses}
-          placeholder={props.placeholder}
+          className={`${inputClasses} ${locale === "en" && "capitalize"}`}
+          placeholder={t.formData.passwordPalceHolder}
         />
         <span
-          className="absolute left-3 top-4 text-gray-700 cursor-pointer"
+          className="absolute rtl:left-3 rtl:top-4 ltr:top-4 ltr:right-3 text-gray-700 cursor-pointer w-5 h-5"
           onClick={toggleShowPassword}
         >
           {showPassword ? <RiIcons.RiEyeLine /> : <RiIcons.RiEyeOffLine />}

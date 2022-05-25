@@ -1,7 +1,11 @@
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { formData } from "./../../data/formData";
+import { fa, en } from "../../translation";
 
 function InputMobile(props) {
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === "fa" ? fa : en;
   const [check, setCheck] = useState(0);
   const [inputClasses, setClasses] = useState(
     "w-full border-2 border-gray-500 rounded-md px-3 h-12 focus:outline-0 transition-all"
@@ -45,7 +49,9 @@ function InputMobile(props) {
   return (
     <div className="mt-1">
       <div>
-        <label htmlFor="">{formData.mobileLabel}</label>
+        <label htmlFor="" className={`${locale === "fa" ? "" : "capitalize"}`}>
+          {t.formData.mobileLabel}
+        </label>
       </div>
       <div className="w-full mt-2" dir="ltr">
         <input
@@ -62,8 +68,8 @@ function InputMobile(props) {
             }
           }}
           type="number"
-          className={inputClasses}
-          placeholder={formData.mobilePlaceHolder}
+          className={`${inputClasses} ${locale === "fa" ? "" : "capitalize"}`}
+          placeholder={t.formData.mobilePlaceHolder}
         />
       </div>
     </div>
