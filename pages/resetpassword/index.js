@@ -5,12 +5,15 @@ import { useRouter } from 'next/router';
 import InputPassword from '../../components/LoginAndRegistrationSteps/inputPassword';
 import { formData } from '../../data/formData';
 import SubmitButton from '../../components/LoginAndRegistrationSteps/submitButton';
-
+import { fa, en } from "../../translation";
 function ResetPassword() {
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
     const [clicked, setClicked] = useState(false);
     const [error, setError] = useState(null)
+    const router = useRouter();
+    const { locale } = router;
+    const t = locale === "fa" ? fa : en;
     const getPassword = (password) => {
         setPassword(password.trim())
     }
@@ -30,7 +33,7 @@ function ResetPassword() {
             }, 2000)
 
         } else if (password.length >= 6 && repeatPassword >= 6 && password !== repeatPassword) {
-            setError('رمزهای عبور با هم تطابق ندارند!!!')
+            setError(t.formData.notMatchNewPassword)
         }
         else {
             setClicked(false)
@@ -39,7 +42,7 @@ function ResetPassword() {
     }
     console.log(`password : ${password}`);
     console.log(`repeat password : ${repeatPassword}`);
-    const router = useRouter()
+
     return (
         <PageFormUi
             showRegisterLink={false}
@@ -49,21 +52,21 @@ function ResetPassword() {
             srcImage="/Image/logo.png"
             error={error}
             backArrowButtonHandlle={() => router.push('/')}
-            pageTitle="بازیابی رمز عبور"
+            pageTitle={t.pages.resetPassword.title}
         >
             <InputPassword
-                label={formData.resetPasswordLabel}
-                placeholder={formData.resetPasswordPlaceHolder}
+                label={t.formData.resetPasswordLabel}
+                placeholder={t.formData.resetPasswordPlaceHolder}
                 getPassword={getPassword}
             />
             <InputPassword
-                label={formData.repeatResetPasswordLabel}
-                placeholder={formData.repeatResetPasswordPlaceHolder}
+                label={t.formData.repeatResetPasswordLabel}
+                placeholder={t.formData.repeatResetPasswordPlaceHolder}
                 getPassword={getRepeatPassword}
             />
             <SubmitButton
-                titleBtn="رمز عبور جدید"
-                titleProcess="در حال ایجاد رمز عبور جدید"
+                titleBtn={t.formData.submitButtonForNewPassword}
+                titleProcess={t.formData.submitButtonForConfirmCodeProcess}
                 isClicked={clicked}
                 onSubmitForm={formSubmited}
             />

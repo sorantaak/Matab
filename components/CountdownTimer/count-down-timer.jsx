@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
+import { fa, en } from "../../translation";
+import { useRouter } from "next/router";
 function CountDownTimer(props) {
   const [remainSecond, setReaminSecond] = useState(props.remainTime);
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === "fa" ? fa : en;
   // const [retry, setRetry] = useState(false);
   let intervalId;
 
@@ -25,16 +30,16 @@ function CountDownTimer(props) {
           className="text-darkGold hover:text-brightGold"
           onClick={() => setReaminSecond(props.remainTime)}
         >
-          ارسال مجدد
+          {t.counterTime.title}
         </button>
       </div>
     );
   }
   return (
-    <div className="text-center mt-3">
-      <span className="text-gray-500">دریافت مجدد کد تایید پس از :</span>
-      <span className="p-3">{remainSecond}</span>
-      <span className="text-gray-500">ثانیه</span>
+    <div className="flex flex-row justify-center items-center text-center mt-3">
+      <span className="text-gray-500">{t.counterTime.des}</span>
+      <div className="w-9">{remainSecond}</div>
+      <span className="text-gray-500">{t.counterTime.type}</span>
     </div>
   );
 }

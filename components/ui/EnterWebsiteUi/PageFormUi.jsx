@@ -12,7 +12,7 @@ function PageFormUi(props) {
         <div className="flex rtl:flex-row ltr:flex-row-reverse justify-center w-full">
           <h2
             className="flex-1 text-center text-textParColor
-                     text-lg font-bold"
+                     text-lg font-bold capitalize"
           >
             {props.pageTitle}
           </h2>

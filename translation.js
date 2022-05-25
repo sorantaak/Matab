@@ -73,19 +73,28 @@ export const en = {
         submitButtonForConfirmCode: "Register verification code",
         submitButtonForConfirmCodeProcess: "Registering verification code",
         fillFormError: "Please fill out the form information carefully!!!",
+        submitButtonForNewPassword: "New password",
+        submitButtonForNewPasswordProcess: "Creating a new password",
         resetPasswordLabel: "new password",
         resetPasswordPlaceHolder: "new password",
         repeatResetPasswordLabel: "repeat new password",
         repeatResetPasswordPlaceHolder: "repeat new password",
-        messageForResetPassword: "A password recovery link has been sent to you. Please click on it to be redirected to the password recovery page."
-
+        messageForResetPassword: "A password recovery link has been sent to you. Please click on it to be redirected to the password recovery page.",
+        messageSended: "SMS was sent",
+        notMatchNewPassword: "Passwords do not match"
     },
     pages: {
         singUp: { title: "sign up", linkTitle: "I have already registered, log in" },
         logIn: { title: "login", titleBtn: "login", btnTitleProcess: "logining", dontRegisterTitle: "I have not registered", forgotPasswordLinkTitle: "I forgot my password" },
         resetPassword: { title: "reset password" },
-        sendSmsForResetPassword: { title: "get a password recovery link" },
+        sendSmsForResetPassword: {
+            title: "get a password recovery link", titleBtn: "Get a password recovery link",
+            titleProcess: "Sending to you"
+        },
         confirmCode: { title: "Receive confirmation code", errorCode: "The verification code is incorrect", }
+    },
+    counterTime: {
+        title: "resend", des: "Retrieve the verification code after:", type: "second"
     }
 }
 
@@ -162,20 +171,30 @@ export const fa = {
         submitButtonForConfirmCode: "ثبت کد تایید",
         submitButtonForConfirmCodeProcess: "در حال ثبت کد تایی",
         submitButtonForSignupProcess: "در حال ثبت شدن",
+        submitButtonForNewPassword: "رمز عبور جدید",
+        submitButtonForNewPasswordProcess: "در حال ایجاد رمز عبور جدید",
         fillFormError: "لطفا اطلاعات فرم را با دقت پر کنید!!!",
         resetPasswordLabel: "رمز عبور جدید",
         resetPasswordPlaceHolder: "رمز عبور جدید",
         repeatResetPasswordLabel: "تکرار رمز عبور جدید",
         repeatResetPasswordPlaceHolder: "تکرار رمز عبور جدید",
-        messageForResetPassword: "لینک بازیابی رمز عبور برای شما ارسال شد. لطفا بر روی آن کلیک کنید تا به صفحه بازیابی رمز عبور هدایت شوید."
+        messageForResetPassword: "لینک بازیابی رمز عبور برای شما ارسال شد. لطفا بر روی آن کلیک کنید تا به صفحه بازیابی رمز عبور هدایت شوید.",
+        messageSended: "اس ام اس ارسال شد",
+        notMatchNewPassword: "رمزهای عبور با هم مطابقت ندارند"
 
     },
     pages: {
         singUp: { title: "ثبت نام", linkTitle: "قبلاً ثبت نام کرده ام، وارد شوید" },
         logIn: { title: "ورود", titleBtn: "ورود", btnTitleProcess: "در حال ورود", dontRegisterTitle: "ثبت نام نکرده ام", forgotPasswordLinkTitle: "رمز عبور را فراموش کرده ام" },
         resetPassword: { title: "بازیابی رمز عبور" },
-        sendSmsForResetPassword: { title: "دریافت لینک بازیابی رمز عبور" },
+        sendSmsForResetPassword: {
+            title: "دریافت لینک بازیابی رمز عبور", titleBtn: "دریافت لینک بازیابی رمز عبور",
+            titleProcess: "در حال ارسال برای شما"
+        },
         confirmCode: { title: "دریافت کد تاییدیه", errorCode: "کد تایید صحیح نمی باشد", }
 
+    },
+    counterTime: {
+        title: "ارسال مجدد", des: "دریافت مجدد کد تأیید پس از:", type: "ثانیه"
     }
 }
