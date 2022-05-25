@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 import { formData } from "./../../data/formData";
+import { en, fa } from "../../translation";
+import { useRouter } from "next/router";
 
 function InputConfirmation(props) {
   const [check, setCheck] = useState(0);
   const [inputClasses, setClasses] = useState(
     "w-full border-2 border-gray-500 rounded-md px-3 h-14 focus:outline-0 transition-all"
   );
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === "fa" ? fa : en;
 
   const testNumber = /^[0-9]*/;
 
@@ -42,7 +47,7 @@ function InputConfirmation(props) {
   return (
     <div className="mt-1">
       <div>
-        <label htmlFor="">{formData.confirmLabel}</label>
+        <label htmlFor="">{t.formData.confirmLabel}</label>
       </div>
       <div className="w-full mt-2" dir="ltr">
         <input
@@ -60,7 +65,7 @@ function InputConfirmation(props) {
           }}
           type="number"
           className={inputClasses}
-          placeholder={formData.confirmPlaceholder}
+          placeholder={t.formData.confirmPlaceholder}
         />
       </div>
     </div>

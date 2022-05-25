@@ -9,22 +9,19 @@ function PageFormUi(props) {
   return (
     <div className="bg-backLogin-img bg-cover backdrop-blur-md bg-white/30 w-full h-screen ">
       <div className="container w-4/5 mx-auto pt-12">
-        <div className="flex rtl:flex-row ltr:flex-row-reverse w-full">
+        <div className="flex rtl:flex-row ltr:flex-row-reverse justify-center w-full">
           <h2
-            className="basis-2/3 lg:basis-1/2 text-left text-textParColor
+            className="flex-1 text-center text-textParColor
                      text-lg font-bold"
           >
             {props.pageTitle}
           </h2>
-          <span
-            className="basis-1/2 flex rtl:justify-end ltr:justify-start text-3xl text-darkGold "
-            title={props.titleIcon}
-          >
+          <div className="flex text-3xl text-darkGold " title={props.titleIcon}>
             <BiIcons.BiArrowBack
               className="cursor-pointer"
               onClick={props.backArrowButtonHandlle}
             />
-          </span>
+          </div>
         </div>
         <CardFormUi srcImage={props.srcImage}>
           <FormUi>
@@ -49,7 +46,7 @@ function PageFormUi(props) {
             link={props.linkFeatures}
             linkTitle={props.linkTitle}
             forgotPasswordLink="/sendSmsForResetPassword"
-            forgotPasswordLinkTitle="رمز عبور را فراموش کرده ام"
+            forgotPasswordLinkTitle={props.forgotPasswordLinkTitle}
           />
         </CardFormUi>
       </div>

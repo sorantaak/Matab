@@ -177,12 +177,10 @@ function MainNavBar(props) {
         <div
           className="cursor-pointer flex flex-row ltr:flex-row-reverse items-center justify-center bg-darkGold rounded-md text-white px-1 gap-1"
           onClick={handleLanguageToggle}
+          title={locale === "fa" ? "English" : "فارسی"}
         >
-          <span
-            className="rtl:pt-1 ltr:pb-1 font-thin"
-            title={locale === "fa" ? "English" : "فارسی"}
-          >
-            {locale === "fa" ? "En" : "Fa"}
+          <span className="pt-1  font-thin font-vazir">
+            {locale === "fa" ? "En" : "فا"}
           </span>
 
           <MdIcons.MdOutlineLanguage />

@@ -68,6 +68,10 @@ export const en = {
         confirmPlaceholder: "confirm code",
         submitButtonLable: "log in",
         submitButtonLableProcess: "logining...",
+        submitButtonForSignup: "Sing up",
+        submitButtonForSignupProcess: "Singing up",
+        submitButtonForConfirmCode: "Register verification code",
+        submitButtonForConfirmCodeProcess: "Registering verification code",
         fillFormError: "Please fill out the form information carefully!!!",
         resetPasswordLabel: "new password",
         resetPasswordPlaceHolder: "new password",
@@ -77,11 +81,11 @@ export const en = {
 
     },
     pages: {
-        singUp: { title: "sign up" },
-        logIn: { title: "login", titleBtn: "login", btnTitleProcess: "logining" },
+        singUp: { title: "sign up", linkTitle: "I have already registered, log in" },
+        logIn: { title: "login", titleBtn: "login", btnTitleProcess: "logining", dontRegisterTitle: "I have not registered", forgotPasswordLinkTitle: "I forgot my password" },
         resetPassword: { title: "reset password" },
-        sendSmsForResetPassword: { title: "get a password recovery link" }
-
+        sendSmsForResetPassword: { title: "get a password recovery link" },
+        confirmCode: { title: "Receive confirmation code", errorCode: "The verification code is incorrect", }
     }
 }
 
@@ -154,6 +158,10 @@ export const fa = {
         confirmPlaceholder: "کد تاییدیه",
         submitButtonLable: "ورود",
         submitButtonLableProcess: "در حال ورود...",
+        submitButtonForSignup: "ثبت نام",
+        submitButtonForConfirmCode: "ثبت کد تایید",
+        submitButtonForConfirmCodeProcess: "در حال ثبت کد تایی",
+        submitButtonForSignupProcess: "در حال ثبت شدن",
         fillFormError: "لطفا اطلاعات فرم را با دقت پر کنید!!!",
         resetPasswordLabel: "رمز عبور جدید",
         resetPasswordPlaceHolder: "رمز عبور جدید",
@@ -163,10 +171,11 @@ export const fa = {
 
     },
     pages: {
-        singUp: { title: "ثبت نام" },
-        logIn: { title: "ورود", titleBtn: "ورود", btnTitleProcess: "در حال ورود" },
+        singUp: { title: "ثبت نام", linkTitle: "قبلاً ثبت نام کرده ام، وارد شوید" },
+        logIn: { title: "ورود", titleBtn: "ورود", btnTitleProcess: "در حال ورود", dontRegisterTitle: "ثبت نام نکرده ام", forgotPasswordLinkTitle: "رمز عبور را فراموش کرده ام" },
         resetPassword: { title: "بازیابی رمز عبور" },
-        sendSmsForResetPassword: { title: "دریافت لینک بازیابی رمز عبور" }
+        sendSmsForResetPassword: { title: "دریافت لینک بازیابی رمز عبور" },
+        confirmCode: { title: "دریافت کد تاییدیه", errorCode: "کد تایید صحیح نمی باشد", }
 
     }
 }

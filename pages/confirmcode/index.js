@@ -5,6 +5,7 @@ import { formData } from "../../data/formData";
 import CountDownTimer from "../../components/CountdownTimer/count-down-timer";
 import InputConfirmation from "../../components/LoginAndRegistrationSteps/inputConfirmation"
 import PageFormUi from "../../components/ui/EnterWebsiteUi/PageFormUi";
+import { en, fa } from '../../translation';
 
 function Confirmcode() {
     const [confirmCode, setConfirmNumber] = useState('');
@@ -12,6 +13,8 @@ function Confirmcode() {
     const [isClickedSubmitButton, setClickedSubmitButton] = useState(false);
     const [error, setError] = useState('')
     const router = useRouter()
+    const { locale } = router;
+    const t = locale === "fa" ? fa : en;
     const testCode = "123456";
     // console.log(confirmCode);
     const remainingTimer = 10;
@@ -41,7 +44,7 @@ function Confirmcode() {
 
 
         } else {
-            setError(formData.fillFormError)
+            setError(t.formData.fillFormError)
         }
     }
     return (
@@ -53,10 +56,10 @@ function Confirmcode() {
             srcImage="/Image/logo.png"
             error={error}
             backArrowButtonHandlle={() => router.push('/')}
-            pageTitle="ورود به پنل کاربری"
+            pageTitle={t.pages.confirmCode.title}
         >
             <InputConfirmation getConfirm={getConfirmCode} />
-            <SubmitButton titleBtn="ثبت" titleProcess="در حال بررسی" isClicked={isClickedSubmitButton} onSubmitForm={formSubmited} />
+            <SubmitButton titleBtn={t.formData.submitButtonForConfirmCode} titleProcess={t.formData.submitButtonForConfirmCodeProcess} isClicked={isClickedSubmitButton} onSubmitForm={formSubmited} />
             <CountDownTimer remainTime={remainingTimer} />
         </PageFormUi>
 

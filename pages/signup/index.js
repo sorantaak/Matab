@@ -1,9 +1,7 @@
 import { useRouter } from 'next/router';
 import InputMobile from "../../components/LoginAndRegistrationSteps/InputMobile";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import SubmitButton from "../../components/LoginAndRegistrationSteps/submitButton";
-import { formData } from "../../data/formData";
 import Head from "next/head";
 import PageFormUi from "../../components/ui/EnterWebsiteUi/PageFormUi";
 import { en, fa } from '../../translation';
@@ -37,7 +35,7 @@ function Signup() {
             }, 2000)
 
         } else {
-            setError(formData.fillFormError)
+            setError(t.formData.fillFormError)
         }
     }
 
@@ -51,14 +49,14 @@ function Signup() {
                 showRegisterLink={true}
                 showForgetLink={false}
                 linkFeatures="/login"
-                linkTitle="قبلا ثبت نام کرده ام وارد شوید"
+                linkTitle={t.pages.singUp.linkTitle}
                 srcImage="/Image/logo.png"
                 error={error}
-                backArrowButtonHandlle={() => router.push('/login')}
-                pageTitle="ثبت نام"
+                backArrowButtonHandlle={() => router.push('/')}
+                pageTitle={t.pages.singUp.title}
             >
                 <InputMobile getMobile={getMobileNumber} />
-                <SubmitButton titleBtn="ورود" titleProcess="در حال ورود" isClicked={isClickedSubmitButton} onSubmitForm={formSubmited} />
+                <SubmitButton titleBtn={t.formData.submitButtonForSignup} titleProcess={t.formData.submitButtonForSignupProcess} isClicked={isClickedSubmitButton} onSubmitForm={formSubmited} />
             </PageFormUi>
         </>
     )

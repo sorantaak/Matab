@@ -53,11 +53,12 @@ function Login() {
                 showRegisterLink={true}
                 showForgetLink={true}
                 linkFeatures="/signup"
-                linkTitle="ثبت نام نکرده ام"
+                linkTitle={t.pages.logIn.dontRegisterTitle}
                 srcImage="/Image/logo.png"
                 error={error}
                 backArrowButtonHandlle={() => router.push('/')}
                 pageTitle={t.pages.logIn.title}
+                forgotPasswordLinkTitle={t.pages.logIn.forgotPasswordLinkTitle}
             >
                 <InputMobile getMobile={getMobileNumber} />
                 <InputPassword
