@@ -46,7 +46,7 @@ function ResetPassword() {
   };
   console.log(`password : ${password}`);
   console.log(`repeat password : ${repeatPassword}`);
-  // aaaaaaaaaaaaa
+
   return (
     <PageFormUi
       showRegisterLink={false}
