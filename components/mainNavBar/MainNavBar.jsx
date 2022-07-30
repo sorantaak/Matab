@@ -14,7 +14,7 @@ function MainNavBar(props) {
   const { locale } = router;
   const ref = useRef();
   const t = locale === "fa" ? fa : en;
-  console.log(router.asPath);
+
   const { mail, phone } = TopNavBarContactData[0];
   const [showMenu, setShowMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);

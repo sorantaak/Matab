@@ -22,8 +22,6 @@ function ResetPassword() {
     }
 
     const formSubmited = (e) => {
-
-        console.log('click enter')
         e.preventDefault();
         if (password.length >= 6 && repeatPassword >= 6 && password === repeatPassword) {
             setClicked(true)

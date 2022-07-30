@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps, router }) {
 
   }, [locale]);
 
-  if (router.pathname === '/news/[newsId]' || router.pathname === '/' || router.pathname === '/404') {
+  if (router.pathname === '/news/[newsId]' || router.pathname === '/news' || router.pathname === '/' || router.pathname === '/404' || router.pathname === '/test') {
     return (
 
       <Layout>

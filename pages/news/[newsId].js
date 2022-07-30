@@ -52,10 +52,9 @@ export default News
 
 export async function getStaticProps({ params, locale }) {
     // const { params } = context;
-    console.log(locale);
 
     const news = await getNewsById(params.newsId);
-    console.log(`../../lang/${locale}.json`)
+
     if (!news) {
         return { notFound: true } //return 404 page when product is empty
     }

@@ -3,7 +3,6 @@ import BottomFormFeatuers from "./BottomFormFeatuers";
 import CardFormUi from "./CardFormUi";
 import ErrorForm from "./ErrorForm";
 import FormUi from "./FormUi";
-import ImageFromUi from "./ImageFromUi";
 
 function PageFormUi(props) {
   return (
