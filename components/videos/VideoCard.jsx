@@ -4,7 +4,11 @@ function VideoCard(props) {
   return (
     <div className="felx flex-col shadow-md  rounded-md lg:shadow-none  p-3 py-8 justify-center transition-all  hover:scale-110 hover:bg-gray-100 hover:z-30 hover:shadow-md hover:text-sm hover:rounded-md">
       <div className="w-full">
-        <video poster="/image/logo.png" controls="controls" preload="none">
+        <video
+          poster="/image/videocover.png"
+          controls="controls"
+          preload="none"
+        >
           <source src={props.src} type="video/MP4" />
         </video>
       </div>
