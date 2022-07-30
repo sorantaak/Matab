@@ -11,7 +11,7 @@ function VideoSection() {
             <VideoCard src="/video/1.mp4" />
           </div>
           <div className="">
-            <VideoCard src="/video/2.MP4" />
+            <VideoCard src="/video/2.mp4" />
           </div>
           <div className="">
             <VideoCard src="/video/3.MP4" />
