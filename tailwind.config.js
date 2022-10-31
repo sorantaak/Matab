@@ -1,12 +1,12 @@
 module.exports = {
-  mode: 'jit',
+  mode: "jit",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     fontFamily: {
-      'vazir': 'Vazirmatn'
+      vazir: "Vazirmatn",
     },
     // container: {
     //   center: true,
@@ -22,23 +22,23 @@ module.exports = {
         textFooter: "#C5C5C5",
         footer: "#6A6A6A",
         sidebar: "#ECEBE8",
-        sidebarIcon: '#9E9C9C',
-        sidebarMenu: '#333333',
-        trTable: '#F6F5F2'
+        sidebarIcon: "#9E9C9C",
+        sidebarMenu: "#333333",
+        trTable: "#F6F5F2",
       },
       backgroundImage: {
-        'header-img': "url('../styles/img/header.jpg')",
-        'footer-img': "url('../styles/img/footer.jpg')",
-        'backLogin-img': "url('../styles/img/login.jpg')",
-      }
+        "header-img": "url('../styles/img/header.jpg')",
+        "footer-img": "url('../styles/img/footer.jpg')",
+        "backLogin-img": "url('../styles/img/login.jpg')",
+      },
     },
   },
   corePlugins: {
     aspectRatio: false,
   },
   plugins: [
-    require('tailwindcss'),
-    require('autoprefixer'),
-    require('@tailwindcss/aspect-ratio'),
+    require("tailwindcss"),
+    require("autoprefixer"),
+    require("@tailwindcss/aspect-ratio"),
   ],
-}
+};
