@@ -67,7 +67,7 @@ function CarsoulSlider() {
 					quality={100}
 					loading="lazy"
 					placeholder="blur"
-					blurDataURL={featuredImages[currentIndex]}
+					blurDataURL="/image/load/spinner.gif"
 				/>
 			</div>
 			<div className="absolute w-full top-1/2 transform -translate-y-1/2  flex justify-between">
