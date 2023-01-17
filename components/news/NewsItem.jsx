@@ -12,7 +12,7 @@ function NewsItem(props) {
 					height={5462}
 					loading="lazy"
 					placeholder="blur"
-					blurDataURL="/image/load/spinner.gif"
+					blurDataURL={props.image}
 					alt="img"
 				/>
 				{/* <Image
