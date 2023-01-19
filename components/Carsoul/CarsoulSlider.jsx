@@ -64,9 +64,9 @@ function CarsoulSlider() {
 					layout="fill"
 					objectFit="cover"
 					alt="slider"
-					quality={100}
+					quality={20}
 					loading="lazy"
-					placeholder="blur"
+					placeholder="empty"
 					blurDataURL="/image/load/spinner.gif"
 				/>
 			</div>

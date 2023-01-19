@@ -8,8 +8,8 @@ function NewsItem(props) {
 				<Image
 					src={props.image}
 					layout="responsive"
-					width={8192}
-					height={5462}
+					width={1500}
+					height={1000}
 					loading="lazy"
 					placeholder="blur"
 					blurDataURL={props.image}
